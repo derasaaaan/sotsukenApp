@@ -118,7 +118,7 @@
                                     <action selector="cancelButtonTapped:" destination="1aQ-nD-OAZ" eventType="touchUpInside" id="0Xf-JD-4BR"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKh-Yb-95R">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKh-Yb-95R">
                                 <rect key="frame" x="20" y="20" width="335" height="35"/>
                                 <color key="backgroundColor" red="0.30855229560000003" green="0.1155156215" blue="0.76374472019999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
