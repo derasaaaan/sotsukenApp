@@ -10,9 +10,14 @@ import UIKit
 
 class AddTaskViewController: UIViewController {
 
+    // MARK: - Properties
+    
     @IBOutlet weak var taskTextField: UITextField!
     @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
     
+    // MARK: -
+    
+    var taskCategory = "ToDo"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +25,24 @@ class AddTaskViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func categoryChosen(_ sender: Any) {
+    // MARK: - Actions of Buttons
+    
+    @IBAction func categoryChosen(_ sender: UISegmentedControl) {
+        // choose category of task
+        switch sender.selectedSegmentIndex {
+        case 0:
+            taskCategory = "ToDo"
+        case 1:
+            taskCategory = "Shopping"
+        case 2:
+            taskCategory = "Assignment"
+        default:
+            taskCategory = "ToDo"
+        }
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func plusButtonTapped(_ sender: Any) {
