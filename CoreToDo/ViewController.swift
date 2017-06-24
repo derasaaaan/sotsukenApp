@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var taskTableView: UITableView!
     
@@ -18,7 +19,7 @@ class ViewController: UIViewController {
     var tasksToShow:[String:[String]] = ["ToDo":[], "Shopping":[], "Assignment":[]]
     let taskCategories:[String] = ["ToDo", "Shopping", "Assignment"]
     
-    // MARK: - Vire Life Cycle
+    // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,37 @@ class ViewController: UIViewController {
         
         taskTableView.dataSource = self
         taskTableView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // CoreDataからデータをfetchしてくる
+        getData()
+        
+        // taskTableViewを再読み込みする
+        taskTableView.reloadData()
+    }
+    
+    // MARK: - Method of Getting data from Core Data
+    
+    func getData() {
+        // データ保存時と同様にcontextを定義
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do {
+            // CoreDataからデータをfetchしてtasksに格納
+            let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
+            tasks = try context.fetch(fetchRequest)
+            
+            // tasksToShow配列を空にする（同じデータを複数表示しないため）
+            for key in tasksToShow.keys{
+                tasksToShow[key] = []
+            }
+            //先ほどfetchしたデータをtasksToShow配列に格納する
+            for task in tasks {
+                tasksToShow[task.category!]?.append(task.name!)
+            }
+        } catch {
+            print("Fetcing Failed.")
+        }
     }
     
     // MARK: - Table View Data Source
