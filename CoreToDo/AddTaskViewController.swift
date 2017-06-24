@@ -46,6 +46,30 @@ class AddTaskViewController: UIViewController {
     }
     
     @IBAction func plusButtonTapped(_ sender: Any) {
+        
+        // TextFieldに何も入力されていない場合は何もせずに1つ目のビューへ戻ります。
+        let taskName = taskTextField.text
+        if taskName == "" {
+            dismiss(animated: true, completion: nil)
+            return
+        }
+        
+        // context(データベースを扱うのに必要)を定義。
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        // taskにTask(データベースのエンティティです)型オブジェクトを代入します。
+        // このとき、Taskがサジェストされない（エラーになる）場合があります。
+        // 詳しい原因はわかりませんが、Runするか、すべてのファイルを保存してXcodeを再起動すると直るので色々試してみてください。
+        let task = Task(context: context)
+        
+        // 先ほど定義したTask型データのname、categoryプロパティに入力、選択したデータを代入します。
+        task.name = taskName
+        task.category = taskCategory
+        
+        // 上で作成したデータをデータベースに保存します。
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        dismiss(animated: true, completion: nil)
     }
     
     
