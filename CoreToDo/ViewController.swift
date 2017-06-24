@@ -86,6 +86,35 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath){
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        if editingStyle ==  .delete {
+            // 削除したいデータのみをfetchする
+            // 削除したいデータのcategoryとnameを取得
+            let deletedCategory = taskCategories[indexPath.section]
+            let deletedName = tasksToShow[deletedCategory]?[indexPath.row]
+            // 先ほど取得したcategoryとnameに合致するデータのみをfetchするようにfetchRequestを作成
+            let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "name = %@ and category = %@", deletedName!, deletedCategory)
+            // そのfetchRequestを満たすデータをfetchしてtask（配列だが要素を1種類しか持たない）に代入し、削除する
+            do {
+                let task = try context.fetch(fetchRequest)
+                context.delete(task[0])
+            } catch {
+                print("Fetching Failed.")
+            }
+            
+            // 削除した後のデータを保存する
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            // 削除後の全データをfetchする
+            getData()
+        }
+        // taskTableViewを再読み込みする
+        taskTableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
