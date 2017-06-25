@@ -74,19 +74,18 @@ class AddTaskViewController: UIViewController {
             return
         }
         
-        // context(データベースを扱うのに必要)を定義。
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        // 受け取った値が空であれば、新しいTask型オブジェクトを作成する
+        if task == nil {
+            task = Task(context: context)
+        }
         
-        // taskにTask(データベースのエンティティです)型オブジェクトを代入します。
-        // このとき、Taskがサジェストされない（エラーになる）場合があります。
-        // 詳しい原因はわかりませんが、Runするか、すべてのファイルを保存してXcodeを再起動すると直るので色々試してみてください。
-        let task = Task(context: context)
+        // 受け取ったオブジェクト、または、先ほど新しく作成したオブジェクトそのタスクのnameとcategoryに入力データを代入する
+        if let task = task {
+            task.name = taskName
+            task.category = taskCategory
+        }
         
-        // 先ほど定義したTask型データのname、categoryプロパティに入力、選択したデータを代入します。
-        task.name = taskName
-        task.category = taskCategory
-        
-        // 上で作成したデータをデータベースに保存します。
+        // 変更内容を保存する
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
         dismiss(animated: true, completion: nil)
