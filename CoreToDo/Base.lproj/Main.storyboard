@@ -25,6 +25,36 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9ZY-zy-XWP">
                                 <rect key="frame" x="16" y="20" width="343" height="627"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" id="LKC-sV-297" customClass="TaskTableViewCell" customModule="CoreToDo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LKC-sV-297" id="yRC-35-bVp">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bN-HM-2wL">
+                                                    <rect key="frame" x="33" y="12" width="250" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="250" id="Qck-ia-mqt"/>
+                                                        <constraint firstAttribute="height" constant="23" id="aXf-Cn-9wF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2bN-HM-2wL" firstAttribute="top" secondItem="yRC-35-bVp" secondAttribute="topMargin" constant="4" id="o7A-4G-hIa"/>
+                                                <constraint firstItem="2bN-HM-2wL" firstAttribute="leading" secondItem="yRC-35-bVp" secondAttribute="leadingMargin" constant="25" id="q78-yj-1eD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="taskLabel" destination="2bN-HM-2wL" id="GGK-Tx-EU3"/>
+                                            <segue destination="1aQ-nD-OAZ" kind="show" identifier="SegueEditTaskViewController" id="ovk-kK-Cgq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Af4-ZB-WrM">
                                 <rect key="frame" x="305" y="597" width="50" height="50"/>
@@ -153,7 +183,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scF-ql-keR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895" y="124"/>
+            <point key="canvasLocation" x="895" y="44"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ovk-kK-Cgq"/>
+    </inferredMetricsTieBreakers>
 </document>
