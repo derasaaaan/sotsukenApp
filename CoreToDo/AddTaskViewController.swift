@@ -22,10 +22,27 @@ class AddTaskViewController: UIViewController {
     
     var taskCategory = "ToDo"
     
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        // taskにも値が代入されていたら、textFieldとsegmentedControlにそれを表示
+        if let task = task {
+            taskTextField.text = task.name
+            taskCategory = task.category!
+            switch task.category! {
+                case "ToDo":
+                    categorySegmentedControl.selectedSegmentIndex = 0
+                case "Shopping":
+                    categorySegmentedControl.selectedSegmentIndex = 1
+                case "Assignment":
+                    categorySegmentedControl.selectedSegmentIndex = 2
+                default:
+                    categorySegmentedControl.selectedSegmentIndex = 0
+            }
+        }
     }
 
     // MARK: - Actions of Buttons
