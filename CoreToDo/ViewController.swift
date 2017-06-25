@@ -15,6 +15,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: - Properties for table view
     
+    private let segueEditTaskViewController = "SegueEditTaskViewController"
+    
     var tasks:[Task] = []
     var tasksToShow:[String:[String]] = ["ToDo":[], "Shopping":[], "Assignment":[]]
     let taskCategories:[String] = ["ToDo", "Shopping", "Assignment"]
@@ -35,6 +37,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // taskTableViewを再読み込みする
         taskTableView.reloadData()
+    }
+    
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destinationViewController = segue.destination as? AddTaskViewController else { return }
+        
+        // contextをAddTaskViewController.swiftのcontextへ渡す
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        destinationViewController.context = context
+        if let indexPath = taskTableView.indexPathForSelectedRow, segue.identifier == segueEditTaskViewController{
+            // 編集したいデータのcategoryとnameを取得
+            let editedCategory = taskCategories[indexPath.section]
+            let editedName = tasksToShow[editedCategory]?[indexPath.row]
+            // 先ほど取得したcategoryとnameに合致するデータのみをfetchするようにfetchRequestを作成
+            let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "name = %@ and category = %@", editedName!, editedCategory)
+            // そのfetchRequestを満たすデータをfetchしてtask(配列だが要素を一種類しか持たないはず)に代入し、それを渡す
+            do {
+                let task = try context.fetch(fetchRequest)
+                destinationViewController.task = task[0]
+            } catch {
+                print("Fetching Failed.")
+            }
+        }
     }
     
     // MARK: - Method of Getting data from Core Data

@@ -15,6 +15,9 @@ class AddTaskViewController: UIViewController {
     @IBOutlet weak var taskTextField: UITextField!
     @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
     
+    var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var task: Task?
+    
     // MARK: -
     
     var taskCategory = "ToDo"
