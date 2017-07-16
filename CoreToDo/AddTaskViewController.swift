@@ -8,12 +8,19 @@
 
 import UIKit
 
-class AddTaskViewController: UIViewController {
+class AddTaskViewController: UIViewController,UITextFieldDelegate {
 
     // MARK: - Properties
     
+    // MARK: - 今日の日付を代入
+    let nowDate = NSDate()
+    let dateFormat = DateFormatter()
+    let inputDatePicker = UIDatePicker()
+    
+    
     @IBOutlet weak var taskTextField: UITextField!
     @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
+    @IBOutlet weak var dateSelecter: UITextField!
     
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var task: Task?
@@ -43,6 +50,34 @@ class AddTaskViewController: UIViewController {
                     categorySegmentedControl.selectedSegmentIndex = 0
             }
         }
+        
+        //日付フィールドの設定
+        dateFormat.dateFormat = "yyyy年MM月dd日"
+        dateSelecter.text = dateFormat.string(from: nowDate as Date)
+        self.dateSelecter.delegate = self
+        
+        // DatePickerの設定（日付用）
+        inputDatePicker.datePickerMode = UIDatePickerMode.date
+        dateSelecter.inputView = inputDatePicker
+        
+        // キーボードに表示するツールバーの表示
+        let pickerToolBar = UIToolbar(frame: CGRect(x: 0, y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 40.0))
+        pickerToolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
+        pickerToolBar.barStyle = .blackTranslucent
+        pickerToolBar.tintColor = UIColor.white
+        pickerToolBar.backgroundColor = UIColor.black
+        
+//        //ボタンの設定
+//        //右寄せのためのスペース設定
+//        let spaceBarBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace,target: self,action: Selector((":")))
+//        
+//        //完了ボタンを設定
+//        let toolBarBtn = UIBarButtonItem(title: "完了", style: .done, target: self, action: Selector(("toolBarBtnPush:")))
+//        
+//        //ツールバーにボタンを表示
+//        pickerToolBar.items = [spaceBarBtn,toolBarBtn]
+//        dateSelecter.inputAccessoryView = pickerToolBar
+        
     }
 
     // MARK: - Actions of Buttons
@@ -96,6 +131,16 @@ class AddTaskViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //完了を押すとピッカーの値を、テキストフィールドに挿入して、ピッカーを閉じる
+//    func toolBarBtnPush(sender: UIBarButtonItem){
+//        
+//        let pickerDate = inputDatePicker.date
+//        dateSelecter.text = dateFormat.string(from: pickerDate)
+//        
+//        self.view.endEditing(true)
+//    }
+    
     
 
     /*
