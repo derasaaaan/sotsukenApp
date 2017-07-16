@@ -132,16 +132,12 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    //完了を押すとピッカーの値を、テキストフィールドに挿入して、ピッカーを閉じる
-//    func toolBarBtnPush(sender: UIBarButtonItem){
-//        
-//        let pickerDate = inputDatePicker.date
-//        dateSelecter.text = dateFormat.string(from: pickerDate)
-//        
-//        self.view.endEditing(true)
-//    }
-    
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // ピッカーの値をtextFieldに入れて入力画面を閉じる
+        let pickerDate = inputDatePicker.date
+        dateSelecter.text = dateFormat.string(from: pickerDate)
+        self.view.endEditing(true)
+    }
 
     /*
     // MARK: - Navigation
