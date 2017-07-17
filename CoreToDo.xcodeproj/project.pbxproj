@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E38FAF31F1CAE6100FE8A8D /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E38FAF21F1CAE6100FE8A8D /* SideMenuViewController.swift */; };
 		4E45EF1B1EFF9608007B671B /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E45EF1A1EFF9608007B671B /* TaskTableViewCell.swift */; };
 		4E910EB31EFA6661004E4E9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E910EB21EFA6661004E4E9E /* AppDelegate.swift */; };
 		4E910EB51EFA6661004E4E9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E910EB41EFA6661004E4E9E /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E38FAF21F1CAE6100FE8A8D /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		4E45EF1A1EFF9608007B671B /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		4E910EAF1EFA6661004E4E9E /* CoreToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E910EB21EFA6661004E4E9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				4E910EB21EFA6661004E4E9E /* AppDelegate.swift */,
 				4E910EB41EFA6661004E4E9E /* ViewController.swift */,
 				4E910EB61EFA6661004E4E9E /* Main.storyboard */,
+				4E38FAF21F1CAE6100FE8A8D /* SideMenuViewController.swift */,
 				4E45EF1A1EFF9608007B671B /* TaskTableViewCell.swift */,
 				4E910EE31EFA7C48004E4E9E /* AddTaskViewController.swift */,
 				4E910EBC1EFA6661004E4E9E /* Assets.xcassets */,
@@ -272,6 +275,7 @@
 				4E910EE41EFA7C48004E4E9E /* AddTaskViewController.swift in Sources */,
 				4E45EF1B1EFF9608007B671B /* TaskTableViewCell.swift in Sources */,
 				4E910EB31EFA6661004E4E9E /* AppDelegate.swift in Sources */,
+				4E38FAF31F1CAE6100FE8A8D /* SideMenuViewController.swift in Sources */,
 				4E910EBB1EFA6661004E4E9E /* CoreToDo.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

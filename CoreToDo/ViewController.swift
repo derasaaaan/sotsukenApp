@@ -13,6 +13,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var taskTableView: UITableView!
     
+    @IBAction func tapMenu(_ sender: Any) {
+        sideMenuCall()
+    }
+    
+    func sideMenuCall(){
+        self.performSegue(withIdentifier: "sideMenuSegue", sender:nil )
+    }
+    
+    
     // MARK: - Properties for table view
     
     private let segueEditTaskViewController = "SegueEditTaskViewController"

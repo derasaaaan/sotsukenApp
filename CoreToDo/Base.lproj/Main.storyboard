@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9ZY-zy-XWP">
-                                <rect key="frame" x="0.0" y="70" width="375" height="577"/>
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" id="LKC-sV-297" customClass="TaskTableViewCell" customModule="CoreToDo" customModuleProvider="target">
@@ -80,26 +80,62 @@
                                 <color key="textColor" red="0.99215692280000001" green="0.99607849120000003" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOq-k0-uY0">
+                                <rect key="frame" x="20" y="597" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="S0Y-m8-bbu"/>
+                                    <constraint firstAttribute="width" constant="50" id="crK-4c-EPz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="≡">
+                                    <color key="titleColor" red="0.31033289050000001" green="0.040658223239999999" blue="0.61036874870000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QFm-2k-uTu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Af4-ZB-WrM" secondAttribute="trailing" constant="20" id="00h-RO-jIW"/>
                             <constraint firstItem="9ZY-zy-XWP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="78S-ya-LHS"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9ZY-zy-XWP" secondAttribute="bottom" constant="20" id="Fk0-aF-f7z"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9ZY-zy-XWP" secondAttribute="bottom" id="Fk0-aF-f7z"/>
+                            <constraint firstItem="LOq-k0-uY0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Mcs-0D-FFV"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Af4-ZB-WrM" secondAttribute="bottom" constant="20" id="Q7l-0C-ACt"/>
                             <constraint firstAttribute="trailing" secondItem="9ZY-zy-XWP" secondAttribute="trailing" id="UT9-7k-bP2"/>
                             <constraint firstItem="Fsd-as-Gbr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="UcG-W6-kVb"/>
                             <constraint firstItem="Fsd-as-Gbr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oBp-ia-faC"/>
                             <constraint firstItem="9ZY-zy-XWP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="owh-5U-bfv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LOq-k0-uY0" secondAttribute="bottom" constant="20" id="q4U-p4-xpS"/>
                             <constraint firstAttribute="trailing" secondItem="Fsd-as-Gbr" secondAttribute="trailing" id="y6w-fm-FAH"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="taskTableView" destination="9ZY-zy-XWP" id="Ghd-ps-u0B"/>
+                        <segue destination="iHG-11-exQ" kind="presentation" identifier="sideMenuSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Gud-Sn-SGh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+        <!--Side Menu View Controller-->
+        <scene sceneID="ssw-FT-rlC">
+            <objects>
+                <viewController id="iHG-11-exQ" customClass="SideMenuViewController" customModule="CoreToDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Al-tA-fT3"/>
+                        <viewControllerLayoutGuide type="bottom" id="ILl-KS-TgO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GeZ-bJ-k3A">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="toe-vZ-Lhk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118" y="859"/>
         </scene>
         <!--Add Task View Controller-->
         <scene sceneID="mrm-Kr-m4r">
