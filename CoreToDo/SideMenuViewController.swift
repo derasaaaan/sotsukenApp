@@ -42,7 +42,7 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // メニューのViewを作成
         sideMenuView = UITableView(frame: CGRect(x:0, y:barHeight, width:displayWidth * 0.7, height:displayHeight - barHeight))
-        sideMenuView.backgroundColor = UIColor.black // 背景に黒を指定
+        sideMenuView.backgroundColor = UIColor(red: 0.227, green: 0.0, blue:0.549, alpha: 1.0) // 背景色を指定
         sideMenuView.alpha = 0.9 // 透明度を指定
         
         // メニューをタップした時のためにセルのIDの指定やdelegateの指定を行う

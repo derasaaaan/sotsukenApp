@@ -52,12 +52,12 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate {
         }
         
         //日付フィールドの設定
-        dateFormat.dateFormat = "yyyy年MM月dd日"
+        dateFormat.dateFormat = "yyyy年MM月dd日HH時mm分"
         dateSelecter.text = dateFormat.string(from: nowDate as Date)
         self.dateSelecter.delegate = self
         
         // DatePickerの設定（日付用）
-        inputDatePicker.datePickerMode = UIDatePickerMode.date
+        inputDatePicker.datePickerMode = UIDatePickerMode.dateAndTime
         dateSelecter.inputView = inputDatePicker
         
         // キーボードに表示するツールバーの表示
@@ -66,17 +66,6 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate {
         pickerToolBar.barStyle = .blackTranslucent
         pickerToolBar.tintColor = UIColor.white
         pickerToolBar.backgroundColor = UIColor.black
-        
-//        //ボタンの設定
-//        //右寄せのためのスペース設定
-//        let spaceBarBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace,target: self,action: Selector((":")))
-//        
-//        //完了ボタンを設定
-//        let toolBarBtn = UIBarButtonItem(title: "完了", style: .done, target: self, action: Selector(("toolBarBtnPush:")))
-//        
-//        //ツールバーにボタンを表示
-//        pickerToolBar.items = [spaceBarBtn,toolBarBtn]
-//        dateSelecter.inputAccessoryView = pickerToolBar
         
     }
 
