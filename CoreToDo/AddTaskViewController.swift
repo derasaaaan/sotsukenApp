@@ -35,22 +35,6 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        // taskにも値が代入されていたら、textFieldとsegmentedControlにそれを表示
-        if let task = task {
-            taskTextField.text = task.name
-            taskCategory = task.category!
-            switch task.category! {
-                case "ToDo":
-                    categorySegmentedControl.selectedSegmentIndex = 0
-                case "Shopping":
-                    categorySegmentedControl.selectedSegmentIndex = 1
-                case "Assignment":
-                    categorySegmentedControl.selectedSegmentIndex = 2
-                default:
-                    categorySegmentedControl.selectedSegmentIndex = 0
-            }
-        }
-        
         //日付フィールドの設定
         dateFormat.dateFormat = "yyyy年MM月dd日HH時mm分"
         dateSelecter.text = dateFormat.string(from: nowDate as Date)
@@ -66,7 +50,24 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate {
         pickerToolBar.barStyle = .blackTranslucent
         pickerToolBar.tintColor = UIColor.white
         pickerToolBar.backgroundColor = UIColor.black
-        
+
+        // taskにも値が代入されていたら、textFieldとsegmentedControlにそれを表示
+        if let task = task {
+            taskTextField.text = task.name
+            taskCategory = task.category!
+            switch task.category! {
+                case "ToDo":
+                    categorySegmentedControl.selectedSegmentIndex = 0
+                case "Shopping":
+                    categorySegmentedControl.selectedSegmentIndex = 1
+                case "Assignment":
+                    categorySegmentedControl.selectedSegmentIndex = 2
+                default:
+                    categorySegmentedControl.selectedSegmentIndex = 0
+            }
+        }
+//        dateSelecter.text = task?.date //date保存test
+
     }
 
     // MARK: - Actions of Buttons
@@ -85,6 +86,13 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // ピッカーの値をtextFieldに入れて入力画面を閉じる
+        let pickerDate = inputDatePicker.date
+        dateSelecter.text = dateFormat.string(from: pickerDate)
+        self.view.endEditing(true)
+    }
+    
     @IBAction func cancelButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -93,6 +101,7 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate {
         
         // TextFieldに何も入力されていない場合は何もせずに1つ目のビューへ戻ります。
         let taskName = taskTextField.text
+//        let pickerDate = inputDatePicker.date //date保存test
         if taskName == "" {
             dismiss(animated: true, completion: nil)
             return
@@ -107,6 +116,7 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate {
         if let task = task {
             task.name = taskName
             task.category = taskCategory
+//            task.date = dateFormat.string(from: inputDatePicker.date) //date保存test
         }
         
         // 変更内容を保存する
@@ -121,12 +131,6 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // ピッカーの値をtextFieldに入れて入力画面を閉じる
-        let pickerDate = inputDatePicker.date
-        dateSelecter.text = dateFormat.string(from: pickerDate)
-        self.view.endEditing(true)
-    }
 
     /*
     // MARK: - Navigation
