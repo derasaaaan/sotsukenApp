@@ -65,8 +65,8 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate {
                 default:
                     categorySegmentedControl.selectedSegmentIndex = 0
             }
+//            dateSelecter.text = task.date //date保存test
         }
-//        dateSelecter.text = task?.date //date保存test
 
     }
 
