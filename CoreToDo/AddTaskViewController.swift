@@ -65,7 +65,9 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate {
                 default:
                     categorySegmentedControl.selectedSegmentIndex = 0
             }
-//            dateSelecter.text = task.date //date保存test
+            inputDatePicker.date = task.date! as Date //date保存test
+            let insertedDate = inputDatePicker.date
+            dateSelecter.text = dateFormat.string(from: insertedDate)
         }
 
     }
@@ -116,6 +118,7 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate {
         if let task = task {
             task.name = taskName
             task.category = taskCategory
+            task.date = inputDatePicker.date as NSDate //date保存test
 //            task.date = dateFormat.string(from: inputDatePicker.date) //date保存test
         }
         
