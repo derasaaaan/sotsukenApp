@@ -16,11 +16,14 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate {
     let nowDate = NSDate()
     let dateFormat = DateFormatter()
     let inputDatePicker = UIDatePicker()
+    let inputDatePickerEnd = UIDatePicker()
     
     
     @IBOutlet weak var taskTextField: UITextField!
     @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
     @IBOutlet weak var dateSelecter: UITextField!
+    @IBOutlet weak var dateSelectorEnd: UITextField!
+    
     
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var task: Task?
@@ -40,9 +43,16 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate {
         dateSelecter.text = dateFormat.string(from: nowDate as Date)
         self.dateSelecter.delegate = self
         
+        dateSelectorEnd.text = dateFormat.string(from: nowDate as Date)
+        self.dateSelectorEnd.delegate = self
+        
         // DatePickerの設定（日付用）
         inputDatePicker.datePickerMode = UIDatePickerMode.dateAndTime
         dateSelecter.inputView = inputDatePicker
+        
+        inputDatePickerEnd.datePickerMode = UIDatePickerMode.dateAndTime
+        dateSelectorEnd.inputView = inputDatePickerEnd
+        
         
         // キーボードに表示するツールバーの表示
         let pickerToolBar = UIToolbar(frame: CGRect(x: 0, y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 40.0))
@@ -68,6 +78,9 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate {
             inputDatePicker.date = task.date! as Date //date保存test
             let insertedDate = inputDatePicker.date
             dateSelecter.text = dateFormat.string(from: insertedDate)
+            inputDatePickerEnd.date = task.dateEnd! as Date
+            let insertedDateEnd = inputDatePickerEnd.date
+            dateSelectorEnd.text = dateFormat.string(from: insertedDateEnd)
         }
 
     }
@@ -92,6 +105,10 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate {
         // ピッカーの値をtextFieldに入れて入力画面を閉じる
         let pickerDate = inputDatePicker.date
         dateSelecter.text = dateFormat.string(from: pickerDate)
+        self.view.endEditing(true)
+
+        let pickerDateEnd = inputDatePickerEnd.date
+        dateSelectorEnd.text = dateFormat.string(from: pickerDateEnd)
         self.view.endEditing(true)
     }
     
@@ -119,6 +136,7 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate {
             task.name = taskName
             task.category = taskCategory
             task.date = inputDatePicker.date as NSDate //date保存test
+            task.dateEnd = inputDatePickerEnd.date as NSDate
 //            task.date = dateFormat.string(from: inputDatePicker.date) //date保存test
         }
         

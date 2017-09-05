@@ -240,7 +240,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="au3-hc-kGg" userLabel="Date Selecter End">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="au3-hc-kGg" userLabel="Date Selector End">
                                 <rect key="frame" x="16" y="320" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="WRO-M7-Zvl"/>
@@ -282,6 +282,7 @@
                     <connections>
                         <outlet property="categorySegmentedControl" destination="vCf-Qa-Soh" id="109-Tt-ILb"/>
                         <outlet property="dateSelecter" destination="3Ve-RW-q6d" id="z0n-TK-lU0"/>
+                        <outlet property="dateSelectorEnd" destination="au3-hc-kGg" id="5bo-ao-Ts7"/>
                         <outlet property="taskTextField" destination="ASv-wa-mm8" id="Mvf-St-JzP"/>
                     </connections>
                 </viewController>
