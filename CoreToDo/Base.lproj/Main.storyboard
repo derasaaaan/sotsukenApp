@@ -33,10 +33,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check_done" translatesAutoresizingMaskIntoConstraints="NO" id="e6x-sa-Kbj">
+                                                    <rect key="frame" x="8" y="0.0" width="44" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bN-HM-2wL">
-                                                    <rect key="frame" x="33" y="12" width="250" height="23"/>
+                                                    <rect key="frame" x="60" y="11" width="300" height="23"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="250" id="Qck-ia-mqt"/>
+                                                        <constraint firstAttribute="width" constant="300" id="Qck-ia-mqt"/>
                                                         <constraint firstAttribute="height" constant="23" id="aXf-Cn-9wF"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -45,8 +49,8 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="2bN-HM-2wL" firstAttribute="top" secondItem="yRC-35-bVp" secondAttribute="topMargin" constant="4" id="o7A-4G-hIa"/>
-                                                <constraint firstItem="2bN-HM-2wL" firstAttribute="leading" secondItem="yRC-35-bVp" secondAttribute="leadingMargin" constant="25" id="q78-yj-1eD"/>
+                                                <constraint firstItem="2bN-HM-2wL" firstAttribute="top" secondItem="yRC-35-bVp" secondAttribute="topMargin" constant="3" id="o7A-4G-hIa"/>
+                                                <constraint firstItem="2bN-HM-2wL" firstAttribute="leading" secondItem="yRC-35-bVp" secondAttribute="leadingMargin" constant="52" id="q78-yj-1eD"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -291,6 +295,9 @@
             <point key="canvasLocation" x="896.79999999999995" y="123.68815592203899"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="check_done" width="250" height="250"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ovk-kK-Cgq"/>
     </inferredMetricsTieBreakers>
