@@ -19,6 +19,8 @@
 		4E910ED61EFA6661004E4E9E /* CoreToDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E910ED51EFA6661004E4E9E /* CoreToDoUITests.swift */; };
 		4E910EE41EFA7C48004E4E9E /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E910EE31EFA7C48004E4E9E /* AddTaskViewController.swift */; };
 		4ED218D71F78C8B600F0E719 /* TaskSubdivisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED218D61F78C8B600F0E719 /* TaskSubdivisionViewController.swift */; };
+		4ED218DB1F78DF8400F0E719 /* TaskSubdiviStep2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED218DA1F78DF8400F0E719 /* TaskSubdiviStep2ViewController.swift */; };
+		4ED218DD1F78F75900F0E719 /* TaskSubdiviStep3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED218DC1F78F75900F0E719 /* TaskSubdiviStep3ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		4E910ED71EFA6661004E4E9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E910EE31EFA7C48004E4E9E /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		4ED218D61F78C8B600F0E719 /* TaskSubdivisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSubdivisionViewController.swift; sourceTree = "<group>"; };
+		4ED218DA1F78DF8400F0E719 /* TaskSubdiviStep2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSubdiviStep2ViewController.swift; sourceTree = "<group>"; };
+		4ED218DC1F78F75900F0E719 /* TaskSubdiviStep3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSubdiviStep3ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +113,7 @@
 			children = (
 				4E910EB21EFA6661004E4E9E /* AppDelegate.swift */,
 				4ED218D81F78C90000F0E719 /* ToDoList */,
-				4ED218D61F78C8B600F0E719 /* TaskSubdivisionViewController.swift */,
+				4ED218D91F78DE9200F0E719 /* Subdivision */,
 				4E910EB61EFA6661004E4E9E /* Main.storyboard */,
 				4E910EBC1EFA6661004E4E9E /* Assets.xcassets */,
 				4E910EBE1EFA6661004E4E9E /* LaunchScreen.storyboard */,
@@ -146,6 +150,16 @@
 				4E910EE31EFA7C48004E4E9E /* AddTaskViewController.swift */,
 			);
 			path = ToDoList;
+			sourceTree = "<group>";
+		};
+		4ED218D91F78DE9200F0E719 /* Subdivision */ = {
+			isa = PBXGroup;
+			children = (
+				4ED218D61F78C8B600F0E719 /* TaskSubdivisionViewController.swift */,
+				4ED218DA1F78DF8400F0E719 /* TaskSubdiviStep2ViewController.swift */,
+				4ED218DC1F78F75900F0E719 /* TaskSubdiviStep3ViewController.swift */,
+			);
+			path = Subdivision;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,11 +297,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ED218DD1F78F75900F0E719 /* TaskSubdiviStep3ViewController.swift in Sources */,
 				4E910EB51EFA6661004E4E9E /* ViewController.swift in Sources */,
 				4E910EE41EFA7C48004E4E9E /* AddTaskViewController.swift in Sources */,
 				4E45EF1B1EFF9608007B671B /* TaskTableViewCell.swift in Sources */,
 				4ED218D71F78C8B600F0E719 /* TaskSubdivisionViewController.swift in Sources */,
 				4E910EB31EFA6661004E4E9E /* AppDelegate.swift in Sources */,
+				4ED218DB1F78DF8400F0E719 /* TaskSubdiviStep2ViewController.swift in Sources */,
 				4E38FAF31F1CAE6100FE8A8D /* SideMenuViewController.swift in Sources */,
 				4E910EBB1EFA6661004E4E9E /* CoreToDo.xcdatamodeld in Sources */,
 			);
