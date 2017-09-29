@@ -146,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="toe-vZ-Lhk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="118" y="859"/>
+            <point key="canvasLocation" x="118" y="826"/>
         </scene>
         <!--Task Subdivision View Controller-->
         <scene sceneID="GPT-br-Tpa">
@@ -174,32 +174,49 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubdiviTop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38L-LP-Afq">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.76078431369999999" green="0.15686274510000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dli-UT-kdF">
+                                <rect key="frame" x="305" y="597" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="O6x-ce-WYr"/>
+                                    <constraint firstAttribute="width" constant="50" id="Wk9-WA-14T"/>
+                                    <constraint firstAttribute="height" constant="50" id="pUp-S2-e5z"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="28"/>
-                                <color key="textColor" red="0.99215692280000001" green="0.99607849120000003" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="tintColor" red="0.76078431369999999" green="0.15686274510000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHa-2j-NAr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Jb3-5A-g2c"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.76078431369999999" green="0.15686274510000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.99215692280000001" green="0.99607849120000003" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="SubdivTop" id="SVz-Og-Uhc">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="aWA-1E-o8b">
+                                            <color key="tintColor" red="0.99215692280000001" green="0.99607849120000003" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="3Pb-7X-V2G" secondAttribute="trailing" id="68A-1a-ASs"/>
-                            <constraint firstItem="3Pb-7X-V2G" firstAttribute="top" secondItem="38L-LP-Afq" secondAttribute="bottom" id="Mbo-rR-4lg"/>
-                            <constraint firstItem="d50-8u-yLx" firstAttribute="top" secondItem="3Pb-7X-V2G" secondAttribute="bottom" id="MfS-Jq-kRh"/>
-                            <constraint firstItem="38L-LP-Afq" firstAttribute="leading" secondItem="bqy-Jv-Chp" secondAttribute="leading" id="WDc-gd-fE9"/>
-                            <constraint firstItem="38L-LP-Afq" firstAttribute="top" secondItem="bqy-Jv-Chp" secondAttribute="top" id="ZQ2-WR-ugR"/>
+                            <constraint firstAttribute="trailing" secondItem="dli-UT-kdF" secondAttribute="trailing" constant="20" id="7WI-VF-pEM"/>
+                            <constraint firstItem="d50-8u-yLx" firstAttribute="top" secondItem="3Pb-7X-V2G" secondAttribute="bottom" id="EZf-Kr-VjH"/>
+                            <constraint firstItem="3Pb-7X-V2G" firstAttribute="top" secondItem="rHa-2j-NAr" secondAttribute="bottom" id="Lou-pa-zEO"/>
+                            <constraint firstAttribute="trailing" secondItem="rHa-2j-NAr" secondAttribute="trailing" id="XfE-Ml-7Ch"/>
+                            <constraint firstItem="d50-8u-yLx" firstAttribute="top" secondItem="dli-UT-kdF" secondAttribute="bottom" constant="20" id="Z7o-xF-d54"/>
                             <constraint firstItem="3Pb-7X-V2G" firstAttribute="leading" secondItem="bqy-Jv-Chp" secondAttribute="leading" id="elV-yA-P0q"/>
-                            <constraint firstAttribute="trailing" secondItem="38L-LP-Afq" secondAttribute="trailing" id="gbx-8q-Xyt"/>
+                            <constraint firstItem="rHa-2j-NAr" firstAttribute="top" secondItem="bqy-Jv-Chp" secondAttribute="top" id="lKr-eK-PXs"/>
+                            <constraint firstItem="rHa-2j-NAr" firstAttribute="leading" secondItem="bqy-Jv-Chp" secondAttribute="leading" id="yJU-vr-SFT"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvg-4H-sDs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="118" y="1456"/>
+            <point key="canvasLocation" x="117.59999999999999" y="1489.2053973013494"/>
         </scene>
         <!--Task Subdivi Step2 View Controller-->
         <scene sceneID="aqK-rL-Pne">
@@ -213,16 +230,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubdiviStep2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drJ-Ka-7il">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.76078431369999999" green="0.15686274510000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="fwN-tF-exY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="28"/>
-                                <color key="textColor" red="0.99215692280000001" green="0.99607849120000003" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nHu-mo-YYV">
                                 <rect key="frame" x="0.0" y="50" width="375" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -237,15 +244,42 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sps-jN-j56">
+                                <rect key="frame" x="305" y="597" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="K4w-9f-7Lq"/>
+                                    <constraint firstAttribute="height" constant="50" id="wCy-8k-yeN"/>
+                                </constraints>
+                                <color key="tintColor" red="0.76078431369999999" green="0.15686274510000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxA-Um-21I">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1Vh-Wd-bBR"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.76078431369999999" green="0.15686274510000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.99215692280000001" green="0.99607849120000003" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="SubdivStep2" id="kFK-8u-hJa">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="Ukn-kS-h4M">
+                                            <color key="tintColor" red="0.99215692280000001" green="0.99607849120000003" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="drJ-Ka-7il" secondAttribute="trailing" id="2cJ-Q9-FDJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Sps-jN-j56" secondAttribute="trailing" constant="20" id="FBJ-xp-n42"/>
+                            <constraint firstItem="uxA-Um-21I" firstAttribute="top" secondItem="Vjs-Tl-dVW" secondAttribute="top" id="Hqo-Ag-FsT"/>
+                            <constraint firstItem="seo-tj-aB8" firstAttribute="top" secondItem="Sps-jN-j56" secondAttribute="bottom" constant="20" id="IR0-1p-EXe"/>
+                            <constraint firstAttribute="trailing" secondItem="uxA-Um-21I" secondAttribute="trailing" id="SJJ-LW-fW4"/>
                             <constraint firstAttribute="trailing" secondItem="nHu-mo-YYV" secondAttribute="trailing" id="WMd-nH-Bd7"/>
-                            <constraint firstItem="nHu-mo-YYV" firstAttribute="top" secondItem="drJ-Ka-7il" secondAttribute="bottom" id="eVe-5L-Her"/>
-                            <constraint firstItem="drJ-Ka-7il" firstAttribute="leading" secondItem="Vjs-Tl-dVW" secondAttribute="leading" id="ejp-0k-zlY"/>
-                            <constraint firstItem="drJ-Ka-7il" firstAttribute="top" secondItem="Vjs-Tl-dVW" secondAttribute="top" id="fg5-mb-J4R"/>
-                            <constraint firstItem="seo-tj-aB8" firstAttribute="top" secondItem="nHu-mo-YYV" secondAttribute="bottom" id="hJO-h8-Nl4"/>
+                            <constraint firstItem="uxA-Um-21I" firstAttribute="leading" secondItem="Vjs-Tl-dVW" secondAttribute="leading" id="WPT-Ch-Um5"/>
+                            <constraint firstItem="nHu-mo-YYV" firstAttribute="top" secondItem="uxA-Um-21I" secondAttribute="bottom" id="fgB-HG-koF"/>
+                            <constraint firstAttribute="bottom" secondItem="nHu-mo-YYV" secondAttribute="bottom" id="hJO-h8-Nl4"/>
                             <constraint firstItem="nHu-mo-YYV" firstAttribute="leading" secondItem="Vjs-Tl-dVW" secondAttribute="leading" id="qxc-D3-wFt"/>
                         </constraints>
                     </view>
@@ -266,16 +300,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubdiviStep3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbf-bE-oNh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.76078431369999999" green="0.15686274510000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="qTg-4w-Erj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="28"/>
-                                <color key="textColor" red="0.99215692280000001" green="0.99607849120000003" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S8J-ey-gnO">
                                 <rect key="frame" x="0.0" y="50" width="375" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -290,16 +314,43 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyU-YQ-baR">
+                                <rect key="frame" x="305" y="597" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="iHK-af-jdu"/>
+                                    <constraint firstAttribute="height" constant="50" id="lst-nQ-LPp"/>
+                                </constraints>
+                                <color key="tintColor" red="0.76078431369999999" green="0.15686274510000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIS-Rm-BtE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="g2a-Gm-H3G"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.76078431369999999" green="0.15686274510000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.99215692280000001" green="0.99607849120000003" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="SubdivStep3" id="zbU-GW-oaM">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="rZM-F1-fvU">
+                                            <color key="tintColor" red="0.99215692280000001" green="0.99607849120000003" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Bbf-bE-oNh" secondAttribute="trailing" id="3LG-Y7-j8R"/>
-                            <constraint firstItem="Bbf-bE-oNh" firstAttribute="leading" secondItem="FMn-OM-lY5" secondAttribute="leading" id="bDI-um-In6"/>
+                            <constraint firstItem="aIS-Rm-BtE" firstAttribute="top" secondItem="FMn-OM-lY5" secondAttribute="top" id="64B-pG-Pac"/>
+                            <constraint firstAttribute="trailing" secondItem="aIS-Rm-BtE" secondAttribute="trailing" id="8NP-lT-4tK"/>
+                            <constraint firstItem="aIS-Rm-BtE" firstAttribute="leading" secondItem="FMn-OM-lY5" secondAttribute="leading" id="Blz-Z8-w3w"/>
+                            <constraint firstItem="S8J-ey-gnO" firstAttribute="top" secondItem="aIS-Rm-BtE" secondAttribute="bottom" id="aNE-Xm-aPa"/>
+                            <constraint firstAttribute="trailing" secondItem="uyU-YQ-baR" secondAttribute="trailing" constant="20" id="bfJ-KF-zq0"/>
                             <constraint firstItem="S8J-ey-gnO" firstAttribute="leading" secondItem="FMn-OM-lY5" secondAttribute="leading" id="cgI-Pu-UbA"/>
-                            <constraint firstItem="Bbf-bE-oNh" firstAttribute="top" secondItem="FMn-OM-lY5" secondAttribute="top" id="lLV-zj-VD9"/>
+                            <constraint firstItem="uTY-DR-DKE" firstAttribute="top" secondItem="uyU-YQ-baR" secondAttribute="bottom" constant="20" id="mS0-WU-EXH"/>
                             <constraint firstAttribute="trailing" secondItem="S8J-ey-gnO" secondAttribute="trailing" id="ok4-L4-0ol"/>
                             <constraint firstItem="uTY-DR-DKE" firstAttribute="top" secondItem="S8J-ey-gnO" secondAttribute="bottom" id="zL8-s6-88z"/>
-                            <constraint firstItem="S8J-ey-gnO" firstAttribute="top" secondItem="Bbf-bE-oNh" secondAttribute="bottom" id="zRX-Xt-O6P"/>
                         </constraints>
                     </view>
                 </viewController>
