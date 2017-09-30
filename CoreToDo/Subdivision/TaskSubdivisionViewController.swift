@@ -10,11 +10,21 @@ import UIKit
 import CoreData
 
 class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var subdivTableView: UITableView!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        return 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = subdivTableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.reuseIdentifier, for: indexPath) as? TaskTableViewCell else{
+            fatalError("Unexpected Index Path")
+        }
+        
+        //TODO: - sectionData,CellDataの書き込み
+        
+        return cell
         
     }
     
@@ -23,6 +33,9 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        subdivTableView.dataSource = self
+        subdivTableView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
