@@ -146,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="toe-vZ-Lhk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="118" y="826"/>
+            <point key="canvasLocation" x="118" y="905"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="x5W-cb-YfJ">
@@ -171,7 +171,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ocZ-9o-K8S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="118" y="1565"/>
+            <point key="canvasLocation" x="118" y="1677"/>
         </scene>
         <!--SubdivTop-->
         <scene sceneID="GPT-br-Tpa">
@@ -222,7 +222,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SubdivTop" id="Efk-Q9-qX8">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="2A2-z0-3S6">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="edit" id="2A2-z0-3S6">
                             <color key="tintColor" red="0.99215692280000001" green="0.99607849120000003" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -232,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvg-4H-sDs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="897" y="1565"/>
+            <point key="canvasLocation" x="897" y="1677"/>
         </scene>
         <!--SubdivStep2-->
         <scene sceneID="aqK-rL-Pne">
@@ -283,12 +283,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SubdivStep2" id="1lD-YB-sss">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="dAR-kC-sZa"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="edit" id="dAR-kC-sZa"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yzx-y0-gpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="897" y="2323"/>
+            <point key="canvasLocation" x="897" y="2468"/>
         </scene>
         <!--SubdivStep3-->
         <scene sceneID="DEh-et-s27">
@@ -336,12 +336,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SubdivStep3" id="jm0-RQ-6vg">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="TlO-8w-dwo"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="edit" id="TlO-8w-dwo"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sl5-uS-oLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="897" y="3070"/>
+            <point key="canvasLocation" x="897" y="3265"/>
         </scene>
         <!--Add Task View Controller-->
         <scene sceneID="mrm-Kr-m4r">
@@ -504,6 +504,6 @@
         <image name="check_done" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fBg-mH-tsa"/>
+        <segue reference="ovk-kK-Cgq"/>
     </inferredMetricsTieBreakers>
 </document>
