@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4E38FAF31F1CAE6100FE8A8D /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E38FAF21F1CAE6100FE8A8D /* SideMenuViewController.swift */; };
 		4E45EF1B1EFF9608007B671B /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E45EF1A1EFF9608007B671B /* TaskTableViewCell.swift */; };
+		4E8BE0C41F875B310000A2C3 /* SubdivTableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8BE0C31F875B310000A2C3 /* SubdivTableViewCell1.swift */; };
 		4E910EB31EFA6661004E4E9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E910EB21EFA6661004E4E9E /* AppDelegate.swift */; };
 		4E910EB51EFA6661004E4E9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E910EB41EFA6661004E4E9E /* ViewController.swift */; };
 		4E910EB81EFA6661004E4E9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E910EB61EFA6661004E4E9E /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 		4E910ECB1EFA6661004E4E9E /* CoreToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E910ECA1EFA6661004E4E9E /* CoreToDoTests.swift */; };
 		4E910ED61EFA6661004E4E9E /* CoreToDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E910ED51EFA6661004E4E9E /* CoreToDoUITests.swift */; };
 		4E910EE41EFA7C48004E4E9E /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E910EE31EFA7C48004E4E9E /* AddTaskViewController.swift */; };
+		4EB1CAE61F88953D0044213C /* SubdivAddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1CAE51F88953D0044213C /* SubdivAddTaskViewController.swift */; };
 		4ED218D71F78C8B600F0E719 /* TaskSubdivisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED218D61F78C8B600F0E719 /* TaskSubdivisionViewController.swift */; };
 		4ED218DB1F78DF8400F0E719 /* TaskSubdiviStep2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED218DA1F78DF8400F0E719 /* TaskSubdiviStep2ViewController.swift */; };
 		4ED218DD1F78F75900F0E719 /* TaskSubdiviStep3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED218DC1F78F75900F0E719 /* TaskSubdiviStep3ViewController.swift */; };
@@ -43,6 +45,7 @@
 /* Begin PBXFileReference section */
 		4E38FAF21F1CAE6100FE8A8D /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		4E45EF1A1EFF9608007B671B /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		4E8BE0C31F875B310000A2C3 /* SubdivTableViewCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubdivTableViewCell1.swift; sourceTree = "<group>"; };
 		4E910EAF1EFA6661004E4E9E /* CoreToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E910EB21EFA6661004E4E9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E910EB41EFA6661004E4E9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 		4E910ED51EFA6661004E4E9E /* CoreToDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreToDoUITests.swift; sourceTree = "<group>"; };
 		4E910ED71EFA6661004E4E9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E910EE31EFA7C48004E4E9E /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		4EB1CAE51F88953D0044213C /* SubdivAddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubdivAddTaskViewController.swift; sourceTree = "<group>"; };
 		4ED218D61F78C8B600F0E719 /* TaskSubdivisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSubdivisionViewController.swift; sourceTree = "<group>"; };
 		4ED218DA1F78DF8400F0E719 /* TaskSubdiviStep2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSubdiviStep2ViewController.swift; sourceTree = "<group>"; };
 		4ED218DC1F78F75900F0E719 /* TaskSubdiviStep3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSubdiviStep3ViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				4ED218D61F78C8B600F0E719 /* TaskSubdivisionViewController.swift */,
+				4E8BE0C31F875B310000A2C3 /* SubdivTableViewCell1.swift */,
+				4EB1CAE51F88953D0044213C /* SubdivAddTaskViewController.swift */,
 				4ED218DA1F78DF8400F0E719 /* TaskSubdiviStep2ViewController.swift */,
 				4ED218DC1F78F75900F0E719 /* TaskSubdiviStep3ViewController.swift */,
 			);
@@ -301,9 +307,11 @@
 				4E910EB51EFA6661004E4E9E /* ViewController.swift in Sources */,
 				4E910EE41EFA7C48004E4E9E /* AddTaskViewController.swift in Sources */,
 				4E45EF1B1EFF9608007B671B /* TaskTableViewCell.swift in Sources */,
+				4E8BE0C41F875B310000A2C3 /* SubdivTableViewCell1.swift in Sources */,
 				4ED218D71F78C8B600F0E719 /* TaskSubdivisionViewController.swift in Sources */,
 				4E910EB31EFA6661004E4E9E /* AppDelegate.swift in Sources */,
 				4ED218DB1F78DF8400F0E719 /* TaskSubdiviStep2ViewController.swift in Sources */,
+				4EB1CAE61F88953D0044213C /* SubdivAddTaskViewController.swift in Sources */,
 				4E38FAF31F1CAE6100FE8A8D /* SideMenuViewController.swift in Sources */,
 				4E910EBB1EFA6661004E4E9E /* CoreToDo.xcdatamodeld in Sources */,
 			);
