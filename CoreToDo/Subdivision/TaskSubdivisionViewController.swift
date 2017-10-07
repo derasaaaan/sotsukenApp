@@ -13,6 +13,19 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     
     @IBOutlet weak var subdivTableView: UITableView!
     
+    // MARK: - Properties for table view
+    
+    var tasks:[SubdivTask] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        
+        subdivTableView.dataSource = self
+        subdivTableView.delegate = self
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }
@@ -25,18 +38,8 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
         //TODO: - sectionData,CellDataの書き込み
         
         return cell
-        
     }
-    
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
-        subdivTableView.dataSource = self
-        subdivTableView.delegate = self
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
