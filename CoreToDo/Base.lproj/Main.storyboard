@@ -213,6 +213,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="subdivLabel1" destination="qVj-h4-UAZ" id="NEw-0N-lF6"/>
                                             <segue destination="Lw4-Hn-aPB" kind="show" id="HTY-Fw-Uh3"/>
                                         </connections>
                                     </tableViewCell>
@@ -292,7 +293,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Task" id="x2q-lA-NP5">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="8Pb-C7-ltN"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" width="30" style="done" id="8Pb-C7-ltN">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="nv1-Mh-uci" id="rc0-vm-x0t"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="subdivTextField" destination="5Au-a7-b3o" id="mlD-vS-LGa"/>

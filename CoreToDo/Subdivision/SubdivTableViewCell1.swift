@@ -15,8 +15,11 @@ class SubdivTableViewCell1: UITableViewCell {
     static let reuseItentifier = "MainTaskCell"
     
     // MARK: -
-    // ここらへんにoutlet接続
     
+    @IBOutlet weak var subdivLabel1: UILabel!
+    
+    // MARK: - Initialization
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

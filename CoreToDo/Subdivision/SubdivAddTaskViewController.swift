@@ -15,8 +15,6 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var task: SubdivTask?
     
-    var taskCategory = "Subdiv"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -30,10 +28,30 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
         // taskにも値が代入されていたら、textFieldとsegmentedControlにそれを表示
     }
     
+    @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+
+//        let taskName = subdivTextField.text
+//        if taskName == ""{
+//            dismiss(animated: true, completion: nil)
+//            return
+//        }
+//        if task == nil{
+//            task = SubdivTask(context: context)
+//        }
+//
+//        if let task = task{
+//            task.name = taskName
+//        }
+//
+//        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

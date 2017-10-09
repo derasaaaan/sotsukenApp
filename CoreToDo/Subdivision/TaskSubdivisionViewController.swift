@@ -15,6 +15,8 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     
     // MARK: - Properties for table view
     
+    private let segueEditTaskSubdivViewController = "SegueEditTaskSubdivViewController"
+    
     var tasks:[SubdivTask] = []
     
     override func viewDidLoad() {
@@ -25,6 +27,8 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
         subdivTableView.dataSource = self
         subdivTableView.delegate = self
     }
+    
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
