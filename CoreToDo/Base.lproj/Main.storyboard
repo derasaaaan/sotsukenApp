@@ -293,9 +293,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Task" id="x2q-lA-NP5">
-                        <barButtonItem key="rightBarButtonItem" title="Save" width="30" style="done" id="8Pb-C7-ltN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8Pb-C7-ltN">
                             <connections>
-                                <action selector="saveButtonTapped:" destination="nv1-Mh-uci" id="rc0-vm-x0t"/>
+                                <action selector="saveButtonTapped:" destination="nv1-Mh-uci" id="Urd-2y-PGQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
