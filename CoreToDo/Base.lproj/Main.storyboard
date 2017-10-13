@@ -282,6 +282,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uw4-uv-cTZ">
+                                <rect key="frame" x="313" y="92" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -295,7 +300,7 @@
                     <navigationItem key="navigationItem" title="Add New Task" id="x2q-lA-NP5">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="8Pb-C7-ltN">
                             <connections>
-                                <action selector="saveButtonTapped:" destination="nv1-Mh-uci" id="Urd-2y-PGQ"/>
+                                <action selector="saveButtonTapped:" destination="nv1-Mh-uci" id="03i-dA-VMC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

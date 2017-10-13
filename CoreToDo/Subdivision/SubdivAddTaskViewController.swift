@@ -30,23 +30,28 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
 
-        let taskName = subdivTextField.text
-        if taskName == ""{
-            dismiss(animated: true, completion: nil)
-            return
-        }
-        if task == nil{
-            task = SubdivTask(context: context)
-        }
+        print("tapped")
+        
+//        let taskName = subdivTextField.text
+//        if taskName == ""{
+//            dismiss(animated: true, completion: nil)
+//            return
+//        }
+//        if task == nil{
+//            task = SubdivTask(context: context)
+//        }
+//
+//        if let task = task{
+//            task.name = taskName
+//        }
+//
+//        (UIApplication.shared.delegate as! AppDelegate).saveContext()
 
-        if let task = task{
-            task.name = taskName
-        }
+//        dismiss(animated: true, completion: nil)
 
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
-
-        dismiss(animated: true, completion: nil)
     }
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
