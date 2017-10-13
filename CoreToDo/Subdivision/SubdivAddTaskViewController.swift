@@ -47,11 +47,8 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
 //
 //        (UIApplication.shared.delegate as! AppDelegate).saveContext()
 
-//        dismiss(animated: true, completion: nil)
-
+        navigationController?.popViewController(animated: true)
     }
-    
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
