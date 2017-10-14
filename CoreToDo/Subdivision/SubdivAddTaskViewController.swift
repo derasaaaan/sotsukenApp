@@ -11,6 +11,9 @@ import UIKit
 class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var subdivTextField: UITextField!
+    @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
+    
+    var taskCategory = "ToDo"
     
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var task: SubdivTask?
@@ -28,26 +31,41 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
         // taskにも値が代入されていたら、textFieldとsegmentedControlにそれを表示
     }
     
+    
+    @IBAction func categoryChosen(_ sender: Any) {
+        // choose category of task
+        switch (sender as AnyObject).selectedSegmentIndex {
+        case 0:
+            taskCategory = "ToDo"
+        case 1:
+            taskCategory = "First"
+        case 2:
+            taskCategory = "Second"
+        default:
+            taskCategory = "Third"
+        }
+    }
+    
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
-
-        print("tapped")
         
-//        let taskName = subdivTextField.text
-//        if taskName == ""{
-//            dismiss(animated: true, completion: nil)
-//            return
-//        }
-//        if task == nil{
-//            task = SubdivTask(context: context)
-//        }
-//
-//        if let task = task{
-//            task.name = taskName
-//        }
-//
-//        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        let taskName = subdivTextField.text
+        if taskName == ""{
+            navigationController?.popViewController(animated: true)
+            return
+        }
+        
+        // 受け取った値が空であれば、新しいTask型オブジェクトを作成する
+        if task == nil{
+            task = SubdivTask(context: context)
+        }
+
+        // 受け取ったオブジェクト、または、先ほど新しく作成したオブジェクトそのタスクのnameとcategoryに入力データを代入する
+        if let task = task {
+            task.name = taskName
+            task.category = taskCategory
 
         navigationController?.popViewController(animated: true)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

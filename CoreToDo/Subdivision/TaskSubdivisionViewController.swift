@@ -18,7 +18,8 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     private let segueEditTaskSubdivViewController = "SegueEditTaskSubdivViewController"
     
     var tasks:[SubdivTask] = []
-    var tasksToShow:[String] = ["ToDo"]
+    var tasksToShow:[String:[String]] = ["ToDo":[], "Shopping":[], "Assignment":[]]
+    let taskCategories:[String] = ["ToDo", "Shopping", "Assignment"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,10 +48,11 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
         destinationViewController.context = context
         if let indexPath = subdivTableView.indexPathForSelectedRow, segue.identifier == segueEditTaskSubdivViewController{
             // 編集したいデータのcategoryとnameを取得
-            let editedName = tasksToShow[indexPath.row]
+            let editedCategory = taskCategories[indexPath.section]
+            let editedName = tasksToShow[editedCategory]?[indexPath.row]
             // 先ほど取得したcategoryとnameに合致するデータのみをfetchするようにfetchRequestを作成
             let fetchRequest: NSFetchRequest<SubdivTask> = SubdivTask.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "name = %@", editedName)
+            fetchRequest.predicate = NSPredicate(format: "name = %@ and category = %@", editedName!, editedCategory)
             // そのfetchRequestを満たすデータをfetchしてtask(配列だが要素を一種類しか持たないはず)に代入し、それを渡す
             do {
                 let task = try context.fetch(fetchRequest)
@@ -63,42 +65,82 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     
     // MARK: - Method of Getting data from Core Data
     
-//    func getData() {
-//        // データ保存時と同様にcontextを定義
-//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//        do {
-//            // CoreDataからデータをfetchしてtasksに格納
-//            let fetchRequest: NSFetchRequest<SubdivTask> = SubdivTask.fetchRequest()
-//            tasks = try context.fetch(fetchRequest)
-//
-//            // tasksToShow配列を空にする。（同じデータを複数表示しないため）
-//            for key in tasksToShow.keys {
-//                tasksToShow[key] = []
-//            }
-//            // 先ほどfetchしたデータをtasksToShow配列に格納する
-//            for task in tasks {
-//                tasksToShow[task.name!]
-//            }
-//        } catch {
-//            print("Fetching Failed.")
-//        }
-//    }
+    func getData() {
+        // データ保存時と同様にcontextを定義
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do {
+            // CoreDataからデータをfetchしてtasksに格納
+            let fetchRequest: NSFetchRequest<SubdivTask> = SubdivTask.fetchRequest()
+            tasks = try context.fetch(fetchRequest)
+            
+            // tasksToShow配列を空にする（同じデータを複数表示しないため）
+            for key in tasksToShow.keys{
+                tasksToShow[key] = []
+            }
+            //先ほどfetchしたデータをtasksToShow配列に格納する
+            for task in tasks {
+                tasksToShow[task.category!]?.append(task.name!)
+            }
+        } catch {
+            print("Fetcing Failed.")
+        }
+    }
     
+    // MARK: - Table View Data Source
+    
+    // taskCategories[]に格納されている文字列がTableViewのセクションになる
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return taskCategories.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return taskCategories[section]
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return tasksToShow[taskCategories[section]]!.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = subdivTableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.reuseIdentifier, for: indexPath) as? TaskTableViewCell else{
+        guard let cell = subdivTableView.dequeueReusableCell(withIdentifier: SubdivTableViewCell1.reuseIdentifier, for: indexPath) as? SubdivTableViewCell1 else{
             fatalError("Unexpected Index Path")
         }
         
-        //TODO: - sectionData,CellDataの書き込み
+        let sectionData = tasksToShow[taskCategories[indexPath.section]]
+        let cellData = sectionData?[indexPath.row]
         
         return cell
     }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath){
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        if editingStyle ==  .delete {
+            // 削除したいデータのみをfetchする
+            // 削除したいデータのcategoryとnameを取得
+            let deletedCategory = taskCategories[indexPath.section]
+            let deletedName = tasksToShow[deletedCategory]?[indexPath.row]
+            // 先ほど取得したcategoryとnameに合致するデータのみをfetchするようにfetchRequestを作成
+            let fetchRequest: NSFetchRequest<SubdivTask> = SubdivTask.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "name = %@ and category = %@", deletedName!, deletedCategory)
+            // そのfetchRequestを満たすデータをfetchしてtask（配列だが要素を1種類しか持たない）に代入し、削除する
+            do {
+                let task = try context.fetch(fetchRequest)
+                context.delete(task[0])
+            } catch {
+                print("Fetching Failed.")
+            }
+            
+            // 削除した後のデータを保存する
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            // 削除後の全データをfetchする
+            getData()
+        }
+        // taskTableViewを再読み込みする
+        subdivTableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
