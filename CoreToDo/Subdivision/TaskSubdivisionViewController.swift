@@ -18,8 +18,8 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     private let segueEditTaskSubdivViewController = "SegueEditTaskSubdivViewController"
     
     var tasks:[SubdivTask] = []
-    var tasksToShow:[String:[String]] = ["ToDo":[], "Shopping":[], "Assignment":[]]
-    let taskCategories:[String] = ["ToDo", "Shopping", "Assignment"]
+    var tasksToShow:[String:[String]] = ["First":[], "Second":[], "Third":[]]
+    let taskCategories:[String] = ["First", "Second", "Third"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     
     override func viewWillAppear(_ animated: Bool) {
         // CoreDataからデータをfetchしてくる
-//        getData()
+        getData()
         
         // taskTableViewを再読み込みする
         subdivTableView.reloadData()
@@ -102,12 +102,14 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = subdivTableView.dequeueReusableCell(withIdentifier: SubdivTableViewCell1.reuseIdentifier, for: indexPath) as? SubdivTableViewCell1 else{
+        guard let cell = subdivTableView.dequeueReusableCell(withIdentifier: SubdivTableViewCell1.reuseItentifier, for: indexPath) as? SubdivTableViewCell1 else{
             fatalError("Unexpected Index Path")
         }
         
         let sectionData = tasksToShow[taskCategories[indexPath.section]]
         let cellData = sectionData?[indexPath.row]
+        
+        cell.textLabel?.text = "\(cellData!)"
         
         return cell
     }
