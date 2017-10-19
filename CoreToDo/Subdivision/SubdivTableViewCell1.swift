@@ -15,7 +15,7 @@ class SubdivTableViewCell1: UITableViewCell {
     static let reuseItentifier = "MainTaskCell"
     
     // MARK: -
-    
+        
     @IBOutlet weak var subdivLabel1: UILabel!
     
     // MARK: - Initialization

@@ -9,9 +9,9 @@
 import UIKit
 
 class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
-
+    
     @IBOutlet weak var subdivTextField: UITextField!
-    @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
+    @IBOutlet weak var subdCategorySegmentedControl: UISegmentedControl!
     
     var taskCategory = "ToDo"
     
@@ -36,13 +36,13 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
         // choose category of task
         switch (sender as AnyObject).selectedSegmentIndex {
         case 0:
-            taskCategory = "ToDo"
-        case 1:
             taskCategory = "First"
-        case 2:
+        case 1:
             taskCategory = "Second"
-        default:
+        case 2:
             taskCategory = "Third"
+        default:
+            taskCategory = "First"
         }
     }
     

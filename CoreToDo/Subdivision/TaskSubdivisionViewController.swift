@@ -72,7 +72,7 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
             // CoreDataからデータをfetchしてtasksに格納
             let fetchRequest: NSFetchRequest<SubdivTask> = SubdivTask.fetchRequest()
             tasks = try context.fetch(fetchRequest)
-            
+
             // tasksToShow配列を空にする（同じデータを複数表示しないため）
             for key in tasksToShow.keys{
                 tasksToShow[key] = []
@@ -137,7 +137,7 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
             
             // 削除後の全データをfetchする
-            getData()
+//            getData()
         }
         // taskTableViewを再読み込みする
         subdivTableView.reloadData()
