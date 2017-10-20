@@ -13,15 +13,20 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var subdivTextField: UITextField!
     @IBOutlet weak var subdCategorySegmentedControl: UISegmentedControl!
     
-    var taskCategory = "ToDo"
-    
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var task: SubdivTask?
+    
+    // MARK: -
+    
+    var taskCategory = "ToDo"
+    
+    // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        // キーボードに表示するツールバーの表示
         let pickerToolBar = UIToolbar(frame: CGRect(x: 0, y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 40.0))
         pickerToolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
         pickerToolBar.barStyle = .blackTranslucent
@@ -29,6 +34,7 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
         pickerToolBar.backgroundColor = UIColor.black
         
         // taskにも値が代入されていたら、textFieldとsegmentedControlにそれを表示
+        
     }
     
     

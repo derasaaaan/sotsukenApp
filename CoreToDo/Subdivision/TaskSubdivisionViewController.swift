@@ -96,7 +96,8 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return taskCategories[section]
     }
-    
+
+    // tasksToShowにカテゴリー（tasksToShowのキーとなっている）ごとのnameが格納されている
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasksToShow[taskCategories[section]]!.count
     }
