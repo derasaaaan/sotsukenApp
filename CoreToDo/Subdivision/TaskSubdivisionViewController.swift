@@ -21,9 +21,10 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     var tasksToShow:[String:[String]] = ["First":[], "Second":[], "Third":[]]
     let taskCategories:[String] = ["First", "Second", "Third"]
     
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
         
         subdivTableView.dataSource = self
@@ -32,7 +33,7 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     
     override func viewWillAppear(_ animated: Bool) {
         // CoreDataからデータをfetchしてくる
-        getData()
+//        getData()
         
         // taskTableViewを再読み込みする
         subdivTableView.reloadData()

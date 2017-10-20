@@ -137,7 +137,6 @@ class AddTaskViewController: UIViewController,UITextFieldDelegate {
             task.category = taskCategory
             task.date = inputDatePicker.date as NSDate //date保存test
             task.dateEnd = inputDatePickerEnd.date as NSDate
-//            task.date = dateFormat.string(from: inputDatePicker.date) //date保存test
         }
         
         // 変更内容を保存する

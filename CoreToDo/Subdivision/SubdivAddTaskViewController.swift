@@ -34,9 +34,23 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
         pickerToolBar.backgroundColor = UIColor.black
         
         // taskにも値が代入されていたら、textFieldとsegmentedControlにそれを表示
-        
+        if let task = task {
+            subdivTextField.text = task.name
+            taskCategory = task.category!
+            switch task.category! {
+            case "First":
+                subdCategorySegmentedControl.selectedSegmentIndex = 0
+            case "Second":
+                subdCategorySegmentedControl.selectedSegmentIndex = 1
+            case "Third":
+                subdCategorySegmentedControl.selectedSegmentIndex = 2
+            default:
+                subdCategorySegmentedControl.selectedSegmentIndex = 0
+            }
+        }
     }
     
+    // MARK: - Actions of Buttons
     
     @IBAction func categoryChosen(_ sender: Any) {
         // choose category of task
@@ -69,9 +83,12 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
         if let task = task {
             task.name = taskName
             task.category = taskCategory
-
-        navigationController?.popViewController(animated: true)
         }
+        
+        // 変更内容を保存する
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        navigationController?.popViewController(animated: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
