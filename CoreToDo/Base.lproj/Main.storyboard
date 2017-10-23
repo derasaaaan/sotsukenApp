@@ -294,7 +294,7 @@
                                 </segments>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <connections>
-                                    <action selector="categoryChosen:" destination="nv1-Mh-uci" eventType="valueChanged" id="D52-Fg-8RC"/>
+                                    <action selector="categoryChosen:" destination="nv1-Mh-uci" eventType="valueChanged" id="zLk-bv-t0d"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>

@@ -18,7 +18,7 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
     
     // MARK: -
     
-    var taskCategory = "ToDo"
+    var taskCategory = "First"
     
     // MARK: - View Life Cycle
     
@@ -52,7 +52,7 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
     
     // MARK: - Actions of Buttons
     
-    @IBAction func categoryChosen(_ sender: Any) {
+    @IBAction func categoryChosen(_ sender: UISegmentedControl) {
         // choose category of task
         switch (sender as AnyObject).selectedSegmentIndex {
         case 0:
@@ -65,6 +65,7 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
             taskCategory = "First"
         }
     }
+    
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         

@@ -33,7 +33,7 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     
     override func viewWillAppear(_ animated: Bool) {
         // CoreDataからデータをfetchしてくる
-//        getData()
+        getData()
         
         // taskTableViewを再読み込みする
         subdivTableView.reloadData()
