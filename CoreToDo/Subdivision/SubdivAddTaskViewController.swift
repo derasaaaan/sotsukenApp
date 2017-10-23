@@ -54,7 +54,7 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
     
     @IBAction func categoryChosen(_ sender: UISegmentedControl) {
         // choose category of task
-        switch (sender as AnyObject).selectedSegmentIndex {
+        switch sender.selectedSegmentIndex {
         case 0:
             taskCategory = "First"
         case 1:

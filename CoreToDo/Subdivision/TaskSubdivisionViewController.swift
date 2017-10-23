@@ -81,6 +81,7 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
             //先ほどfetchしたデータをtasksToShow配列に格納する
             for task in tasks {
                 tasksToShow[task.category!]?.append(task.name!)
+                // task.categoryにnilが入ってる
             }
         } catch {
             print("Fetcing Failed.")
