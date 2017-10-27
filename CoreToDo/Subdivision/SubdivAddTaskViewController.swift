@@ -42,6 +42,8 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
                 subdCategorySegmentedControl.selectedSegmentIndex = 0
             case "Second":
                 subdCategorySegmentedControl.selectedSegmentIndex = 1
+            case "Third":
+                subdCategorySegmentedControl.selectedSegmentIndex = 2
             default:
                 subdCategorySegmentedControl.selectedSegmentIndex = 0
             }
@@ -57,6 +59,8 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
             taskCategory = "First"
         case 1:
             taskCategory = "Second"
+        case 2:
+            taskCategory = "Third"
         default:
             taskCategory = "First"
         }

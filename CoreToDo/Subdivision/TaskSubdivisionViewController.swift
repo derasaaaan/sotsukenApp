@@ -18,8 +18,8 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     private let segueEditTaskSubdivViewController = "SegueEditTaskSubdivViewController"
     
     var tasks:[SubdivTask] = []
-    var tasksToShow:[String:[String]] = ["First":[], "Second":[]]
-    let taskCategories:[String] = ["First", "Second"]
+    var tasksToShow:[String:[String]] = ["First":[], "Second":[], "Third":[]]
+    let taskCategories:[String] = ["First", "Second", "Third"]
     
     // MARK: - View Life Cycle
     
@@ -81,7 +81,6 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
             //先ほどfetchしたデータをtasksToShow配列に格納する
             for task in tasks {
                 tasksToShow[task.category!]?.append(task.name!)
-                // task.categoryにnilが入ってる
             }
         } catch {
             print("Fetcing Failed.")
@@ -140,7 +139,7 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
             
             // 削除後の全データをfetchする
-//            getData()
+            getData()
         }
         // taskTableViewを再読み込みする
         subdivTableView.reloadData()
