@@ -18,8 +18,8 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     private let segueEditTaskSubdivViewController = "SegueEditTaskSubdivViewController"
     
     var tasks:[SubdivTask] = []
-    var tasksToShow:[String:[String]] = ["First":[], "Second":[], "Third":[]]
-    let taskCategories:[String] = ["First", "Second", "Third"]
+    var tasksToShow:[String:[String]] = ["First":[], "Second":[]]
+    let taskCategories:[String] = ["First", "Second"]
     
     // MARK: - View Life Cycle
     
