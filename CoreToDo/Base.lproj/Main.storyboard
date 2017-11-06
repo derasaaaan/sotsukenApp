@@ -307,7 +307,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="x2q-lA-NP5">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8Pb-C7-ltN">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="8Pb-C7-ltN">
                             <connections>
                                 <action selector="saveButtonTapped:" destination="nv1-Mh-uci" id="03i-dA-VMC"/>
                             </connections>
@@ -345,9 +345,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="uUX-6e-kuX" kind="show" id="QH9-hG-KLI"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -436,7 +433,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="E0t-ov-dZK">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9Nq-ea-EAb"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="9Nq-ea-EAb"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Pc-KJ-XPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -452,25 +449,25 @@
                         <viewControllerLayoutGuide type="bottom" id="uTY-DR-DKE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FMn-OM-lY5">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S8J-ey-gnO">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Step3Cell" id="wIw-nc-rhe">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wIw-nc-rhe" id="dkz-HV-kij">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyU-YQ-baR">
-                                <rect key="frame" x="305" y="533" width="50" height="50"/>
+                                <rect key="frame" x="305" y="597" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="iHK-af-jdu"/>
                                     <constraint firstAttribute="height" constant="50" id="lst-nQ-LPp"/>
