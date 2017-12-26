@@ -21,6 +21,8 @@ class TaskSubdiviStep2ViewController: UIViewController, UITableViewDataSource, U
     var tasksToShow:[String:[String]] = ["First":[], "Second":[]]
     let taskCategories:[String] = ["First", "Second"]
     
+    var number = 0
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -29,14 +31,18 @@ class TaskSubdiviStep2ViewController: UIViewController, UITableViewDataSource, U
         
         subdivTableView2.dataSource = self
         subdivTableView2.delegate = self
+        
+                print(self.number)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         // CoreDataからデータをfetchしてくる
-        //getData()
+        getData()
         
         // taskTableViewを再読み込みする
         subdivTableView2.reloadData()
+        
+                print(self.number)
     }
     
     // MARK: Navigation

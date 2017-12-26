@@ -62,6 +62,7 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
                 print("Fetching Failed.")
             }
         }
+
     }
     
     // MARK: - Method of Getting data from Core Data
@@ -114,6 +115,9 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
         cell.textLabel?.text = "\(cellData!)"
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath){
