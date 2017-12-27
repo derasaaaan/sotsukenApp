@@ -1,6 +1,4 @@
 # sotsukenApp
-なんか色々アップされてもうた
-
 
 中身のSubdivisionフォルダが該当のファイルです。
 
