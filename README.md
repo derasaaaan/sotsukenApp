@@ -1,0 +1,16 @@
+# sotsukenApp
+なんか色々アップされてもうた
+
+
+中身のSubdivisionフォルダが該当のファイルです。
+
+TaskSubdivisionViewController(タスク一覧ページ)(最初に出てくるページ)
+TaskSubdiviStep2ViewController(タスク詳細ページ)
+TaskSubdiviStep3ViewController（今は繋がってない）
+これらがTableVIewのあるページ
+
+SubdivTableViewCell1(タスク一覧ページのcell)
+SubdivTableViewCell2(タスク詳細ページのcell)
+
+SubdivAddTaskViewController(タスク一覧ページから飛ぶ、タスクの名前とか入力するページ)
+SubdivAddTask2ViewController(タスク詳細ページから飛ぶ、タスクの名前とか入力するページ)
