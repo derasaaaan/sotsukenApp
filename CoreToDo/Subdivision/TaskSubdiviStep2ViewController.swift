@@ -97,12 +97,13 @@ class TaskSubdiviStep2ViewController: UIViewController, UITableViewDataSource, U
 
     // taskCategories[]に格納されている文字列がTableViewのセクションになる
     func numberOfSections(in tableView: UITableView) -> Int {
-        return taskCategories.count
+//        return taskCategories.count
+        return 1
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return taskCategories[section]
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return taskCategories[section]
+//    }
     
     // tasksToShowにカテゴリー（tasksToShowのキーとなっている）ごとのnameが格納されている
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
