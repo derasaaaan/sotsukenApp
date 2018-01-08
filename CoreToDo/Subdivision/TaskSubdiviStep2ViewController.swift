@@ -41,8 +41,6 @@ class TaskSubdiviStep2ViewController: UIViewController, UITableViewDataSource, U
         
         // taskTableViewを再読み込みする
         subdivTableView2.reloadData()
-        
-                print(self.number)
     }
     
     // MARK: Navigation
@@ -87,7 +85,7 @@ class TaskSubdiviStep2ViewController: UIViewController, UITableViewDataSource, U
             //先ほどfetchしたデータをtasksToShow配列に格納する
             for task in tasks {
                 tasksToShow[task.category!]?.append(task.name!)
-            }
+            }            
         } catch {
             print("Fetcing Failed.")
         }

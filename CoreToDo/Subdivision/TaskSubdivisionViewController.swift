@@ -62,6 +62,10 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
                 print("Fetching Failed.")
             }
         }
+        if segue.identifier == "toDetail" {
+            subdivTableView.dataSource = self
+            subdivTableView.delegate = self
+        }
 
     }
     
