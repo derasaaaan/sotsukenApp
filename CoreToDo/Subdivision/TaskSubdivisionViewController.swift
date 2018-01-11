@@ -21,6 +21,8 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     var tasksToShow:[String:[String]] = ["First":[], "Second":[]]
     let taskCategories:[String] = ["First", "Second"]
     
+    var onegai = 1
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
