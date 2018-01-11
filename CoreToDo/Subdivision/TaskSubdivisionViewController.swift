@@ -44,6 +44,15 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+//        print(segue.identifier!)
+        guard let toDetail = segue.destination as? TaskSubdiviStep2ViewController else { return }
+        print(segue.identifier?.description ?? "aaaaa")
+        if segue.identifier?.description == "toDetail" {
+            print("abc")
+            toDetail.number = 100
+        }
+        
         guard let destinationViewController = segue.destination as? SubdivAddTaskViewController else { return }
         
         // contextをAddTaskViewController.swiftのcontextへ渡す
@@ -63,10 +72,6 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
             } catch {
                 print("Fetching Failed.")
             }
-        }
-        if segue.identifier == "toDetail" {
-            subdivTableView.dataSource = self
-            subdivTableView.delegate = self
         }
 
     }
