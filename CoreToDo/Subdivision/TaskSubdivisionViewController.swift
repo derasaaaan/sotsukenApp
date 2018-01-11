@@ -47,7 +47,7 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
         
 //        print(segue.identifier!)
         guard let toDetail = segue.destination as? TaskSubdiviStep2ViewController else { return }
-        print(segue.identifier?.description ?? "aaaaa")
+//        print(segue.identifier?.description ?? "aaaaa")
         if segue.identifier?.description == "toDetail" {
             print("abc")
             toDetail.number = 100
