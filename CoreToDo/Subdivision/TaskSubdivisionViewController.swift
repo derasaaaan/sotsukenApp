@@ -47,19 +47,19 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
         
         print(segue.identifier!)
         
-        
-        guard let toDetail = segue.destination as? TaskSubdiviStep2ViewController else { return }
+
+//        以下二つのletはguardを外しました
+        let toDetail = segue.destination as? TaskSubdiviStep2ViewController
 //        print(segue.identifier?.description ?? "aaaaa")
         if segue.identifier?.description == "toDetail" {
             print("abc")
-            toDetail.number = 100
+            toDetail?.number = 100
         }
 
-        guard let toAdd = segue.destination as? SubdivAddTaskViewController else { return }
-        print(segue.identifier?.description ?? "aaaaa")
+        let toAdd = segue.destination as? SubdivAddTaskViewController
         if segue.identifier?.description == "toAdd" {
             print("addButtonTapped")
-            toAdd.taskId = 200
+            toAdd?.taskId = 200
         }
         
         guard let destinationViewController = segue.destination as? SubdivAddTaskViewController else { return }
