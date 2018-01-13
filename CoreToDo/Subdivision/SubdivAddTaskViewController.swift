@@ -19,6 +19,7 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
     // MARK: -
     
     var taskCategory = "First"
+    var taskId = 0
     
     // MARK: - View Life Cycle
     
@@ -33,6 +34,8 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
 //        pickerToolBar.tintColor = UIColor.white
 //        pickerToolBar.backgroundColor = UIColor.black
         
+
+        print(self.taskId)
         // taskにも値が代入されていたら、textFieldとsegmentedControlにそれを表示
         if let task = task {
             subdivTextField.text = task.name
@@ -46,6 +49,7 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
                 subdCategorySegmentedControl.selectedSegmentIndex = 0
             }
         }
+//        taskId = SubdivTask?.length
     }
     
     // MARK: - Actions of Buttons
@@ -80,6 +84,8 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
         if let task = task {
             task.name = taskName
             task.category = taskCategory
+//            task.subdivTaskid =
+//            ここにidを数えるなんかを入れるはず
         }
         
         // 変更内容を保存する
