@@ -279,28 +279,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YYo-Rh-Hbm">
-                                <rect key="frame" x="16" y="106" width="343" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2SU-ct-PWz"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <connections>
-                                    <action selector="categoryChosen:" destination="nv1-Mh-uci" eventType="valueChanged" id="zLk-bv-t0d"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YYo-Rh-Hbm" firstAttribute="top" secondItem="5Au-a7-b3o" secondAttribute="bottom" constant="30" id="Klq-E9-QJF"/>
                             <constraint firstItem="WXt-4f-svT" firstAttribute="leading" secondItem="M72-VR-EUW" secondAttribute="leadingMargin" id="NCS-aq-fYu"/>
                             <constraint firstItem="5Au-a7-b3o" firstAttribute="top" secondItem="WXt-4f-svT" secondAttribute="bottom" constant="5" id="RVX-3J-yQB"/>
-                            <constraint firstItem="YYo-Rh-Hbm" firstAttribute="leading" secondItem="M72-VR-EUW" secondAttribute="leadingMargin" id="TEt-zH-jif"/>
-                            <constraint firstItem="YYo-Rh-Hbm" firstAttribute="trailing" secondItem="M72-VR-EUW" secondAttribute="trailingMargin" id="hLr-iz-g3P"/>
                             <constraint firstItem="5Au-a7-b3o" firstAttribute="leading" secondItem="M72-VR-EUW" secondAttribute="leadingMargin" id="ocA-Ci-MJl"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WXt-4f-svT" secondAttribute="trailingMargin" id="p8F-6w-dpr"/>
                             <constraint firstItem="WXt-4f-svT" firstAttribute="top" secondItem="cFf-h7-spr" secondAttribute="bottom" constant="20" id="y6t-7Q-9eK"/>
@@ -314,7 +297,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="subdCategorySegmentedControl" destination="YYo-Rh-Hbm" id="WGM-XX-jni"/>
                         <outlet property="subdivTextField" destination="5Au-a7-b3o" id="bMg-TV-CGc"/>
                     </connections>
                 </viewController>
@@ -342,7 +324,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V7a-FA-2E4" id="HSi-5f-MSN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbI-Qm-bAC" userLabel="SubdivLabel2">
@@ -491,7 +473,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wIw-nc-rhe" id="dkz-HV-kij">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>

@@ -67,19 +67,6 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
     
     // MARK: - Actions of Buttons
     
-    @IBAction func categoryChosen(_ sender: UISegmentedControl) {
-        // choose category of task
-        switch sender.selectedSegmentIndex {
-        case 0:
-            taskCategory = "First"
-        case 1:
-            taskCategory = "Second"
-        default:
-            taskCategory = "First"
-        }
-    }
-    
-    
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         
         let taskName = subdivTextField.text
@@ -98,8 +85,6 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
             task.name = taskName
             task.category = taskCategory
             task.subdivTaskid = Int16(taskId)
-            print("subdivTaskid",task.subdivTaskid)
-//            ここにidを数えるなんかを入れるはず
         }
         
         // 変更内容を保存する
