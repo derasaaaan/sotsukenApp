@@ -324,7 +324,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V7a-FA-2E4" id="HSi-5f-MSN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbI-Qm-bAC" userLabel="SubdivLabel2">
@@ -357,7 +357,7 @@
                                 </constraints>
                                 <color key="tintColor" red="0.76078431369999999" green="0.15686274510000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="VW4-Fb-kSr" kind="show" id="gxU-Zx-L0Q"/>
+                                    <segue destination="VW4-Fb-kSr" kind="show" identifier="toAddSecond" id="gxU-Zx-L0Q"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -410,29 +410,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="l7Q-1c-T4Y" userLabel="DetailCategorySegmentedControl">
-                                <rect key="frame" x="16" y="106" width="343" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="iEB-XF-8bG"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <connections>
-                                    <action selector="categoryChosen:" destination="nv1-Mh-uci" eventType="valueChanged" id="ena-CC-VUU"/>
-                                    <action selector="detailCategoryChosen:" destination="VW4-Fb-kSr" eventType="valueChanged" id="kGm-yf-bYU"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3Xc-SB-2dK" firstAttribute="top" secondItem="hko-ZG-aSv" secondAttribute="top" constant="46" id="489-HU-USK"/>
                             <constraint firstItem="3Xc-SB-2dK" firstAttribute="leading" secondItem="OpZ-Gt-oFg" secondAttribute="leading" id="9EJ-WP-B2b"/>
-                            <constraint firstItem="3Xc-SB-2dK" firstAttribute="trailing" secondItem="l7Q-1c-T4Y" secondAttribute="trailing" id="DG8-ea-Dkc"/>
-                            <constraint firstItem="l7Q-1c-T4Y" firstAttribute="top" secondItem="3Xc-SB-2dK" secondAttribute="bottom" constant="30" id="Ioo-XP-Wka"/>
-                            <constraint firstItem="3Xc-SB-2dK" firstAttribute="leading" secondItem="l7Q-1c-T4Y" secondAttribute="leading" id="LG8-IO-7n3"/>
                             <constraint firstItem="3Xc-SB-2dK" firstAttribute="leading" secondItem="hko-ZG-aSv" secondAttribute="leadingMargin" id="Q9E-pp-zlw"/>
                             <constraint firstItem="3Xc-SB-2dK" firstAttribute="top" secondItem="OpZ-Gt-oFg" secondAttribute="bottom" constant="5" id="nka-pL-Cd4"/>
                         </constraints>
@@ -445,7 +427,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="detailCategorySegmentedControl" destination="l7Q-1c-T4Y" id="oKq-hf-Pdb"/>
                         <outlet property="detailTextField" destination="3Xc-SB-2dK" id="Ye2-Dv-0vB"/>
                     </connections>
                 </viewController>
@@ -473,7 +454,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wIw-nc-rhe" id="dkz-HV-kij">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>

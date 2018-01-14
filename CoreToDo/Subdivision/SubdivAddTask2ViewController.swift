@@ -18,6 +18,8 @@ class SubdivAddTask2ViewController: UIViewController,UITextFieldDelegate {
 
     var taskCategory = "First"
     
+    var number2 = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -35,21 +37,11 @@ class SubdivAddTask2ViewController: UIViewController,UITextFieldDelegate {
                 detailCategorySegmentedControl.selectedSegmentIndex = 0
             }
         }
+        print(self.number2)
     }
 
     // MARK: - Actions of Buttons
 
-    @IBAction func detailCategoryChosen(_ sender: UISegmentedControl) {
-        // choose category of task
-        switch sender.selectedSegmentIndex {
-        case 0:
-            taskCategory = "First"
-        case 1:
-            taskCategory = "Second"
-        default:
-            taskCategory = "First"
-        }
-    }
     
     @IBAction func detailSaveButtonTapped(_ sender: UIBarButtonItem) {
         let taskName = detailTextField.text

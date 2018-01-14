@@ -46,6 +46,14 @@ class TaskSubdiviStep2ViewController: UIViewController, UITableViewDataSource, U
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let toAddSecond = segue.destination as? SubdivAddTask2ViewController
+        if segue.identifier?.description == "toAddSecond" {
+            toAddSecond?.number2 = self.number
+        }
+        
+        
+        
         guard let destinationViewController = segue.destination as? SubdivAddTask2ViewController else { return }
         
         // contextをAddTaskViewController.swiftのcontextへ渡す
