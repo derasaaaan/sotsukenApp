@@ -44,7 +44,7 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
         subdivTableView.reloadData()
         
         totalCell = tasks.count
-        print(totalCell)
+//        print(totalCell)
     }
 
     // MARK: Navigation
@@ -63,9 +63,7 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
         let toAdd = segue.destination as? SubdivAddTaskViewController
         if segue.identifier?.description == "toAdd" {
         //            print("addButtonTapped")
-//        onegai =
-        //            print(onegai)
-        toAdd?.taskId = 200
+        toAdd?.taskId = totalCell
         }
         
         guard let destinationViewController = segue.destination as? SubdivAddTaskViewController else { return }
