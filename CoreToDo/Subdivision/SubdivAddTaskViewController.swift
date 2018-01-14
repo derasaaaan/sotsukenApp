@@ -35,7 +35,7 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
 //        pickerToolBar.backgroundColor = UIColor.black
         
 
-        print("cellの数は",taskId)
+//        print("cellの数は",taskId)
         // taskにも値が代入されていたら、textFieldとsegmentedControlにそれを表示
         if let task = task {
             subdivTextField.text = task.name
@@ -53,9 +53,16 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
         //もし変数の中身がtaskの中身になかったら
         //task.subdibTaskIdに入れる ok
         let cellNum = Int16(taskId) + 1
-        if task?.subdivTaskid == nil{
-            task?.subdivTaskid = cellNum
+        
+        if task?.subdivTaskid != nil{
+            for var i in cellNum...(task?.subdivTaskid)!{
+                i += 1
+            }
+            taskId = Int(cellNum) + 1
+        } else if task?.subdivTaskid == nil{
+            taskId = Int(cellNum)
         }
+        print(taskId)
     }
     
     // MARK: - Actions of Buttons
@@ -90,7 +97,8 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
         if let task = task {
             task.name = taskName
             task.category = taskCategory
-//            task.subdivTaskid =
+            task.subdivTaskid = Int16(taskId)
+            print("subdivTaskid",task.subdivTaskid)
 //            ここにidを数えるなんかを入れるはず
         }
         
