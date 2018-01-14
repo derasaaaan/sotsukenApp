@@ -17,7 +17,7 @@ class SubdivAddTask2ViewController: UIViewController,UITextFieldDelegate {
     var task: DetailTask?
 
     var taskCategory = "First"
-    var number2 = 0
+    var taskIdFirst = 0
     var  taskIdSecond = 0
     
     override func viewDidLoad() {
@@ -50,7 +50,7 @@ class SubdivAddTask2ViewController: UIViewController,UITextFieldDelegate {
         }
         print("secondのcellナンバー",taskIdSecond)
         
-        print(self.number2)
+        print(self.taskIdFirst)
     }
 
     // MARK: - Actions of Buttons
@@ -73,7 +73,7 @@ class SubdivAddTask2ViewController: UIViewController,UITextFieldDelegate {
         if let task = task {
             task.name = taskName
             task.category = taskCategory
-            task.subdivTaskid = Int16(number2)
+            task.subdivTaskid = Int16(taskIdFirst)
             task.detailTaskid = Int16(taskIdSecond)
         }
         

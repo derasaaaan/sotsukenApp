@@ -50,14 +50,14 @@ class TaskSubdiviStep2ViewController: UIViewController, UITableViewDataSource, U
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let indexPath = subdivTableView2.indexPathForSelectedRow {
-            let object = tasks[indexPath.row]
-            print(object)
-        }
+//        if let indexPath = subdivTableView2.indexPathForSelectedRow {
+//            let object = tasks[indexPath.row]
+//            print(object)
+//        }
         
         let toAddSecond = segue.destination as? SubdivAddTask2ViewController
         if segue.identifier?.description == "toAddSecond" {
-            toAddSecond?.number2 = self.number
+            toAddSecond?.taskIdFirst = self.number
             toAddSecond?.taskIdSecond = totalCell
         }
         
@@ -93,6 +93,7 @@ class TaskSubdiviStep2ViewController: UIViewController, UITableViewDataSource, U
         do {
             // CoreDataからデータをfetchしてtasksに格納
             let fetchRequest: NSFetchRequest<DetailTask> = DetailTask.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "subdivTaskid == %@", NSNumber(value: number))
             tasks = try context.fetch(fetchRequest)
             
             // tasksToShow配列を空にする（同じデータを複数表示しないため）
@@ -124,6 +125,11 @@ class TaskSubdiviStep2ViewController: UIViewController, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasksToShow[taskCategories[section]]!.count
     }
+    
+//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+//        let object = tasks[indexPath.row]
+//        print(object)
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = subdivTableView2.dequeueReusableCell(withIdentifier: SubdivTableViewCell2.reuseItentifier, for: indexPath) as? SubdivTableViewCell2 else{
