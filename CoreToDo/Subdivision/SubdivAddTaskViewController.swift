@@ -49,9 +49,7 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
                 subdCategorySegmentedControl.selectedSegmentIndex = 0
             }
         }
-        //変数を作る ok
-        //もし変数の中身がtaskの中身になかったら
-        //task.subdibTaskIdに入れる ok
+        //セルの数から適当にかぶらない数字を割り当て
         let cellNum = Int16(taskId) + 1
         
         if task?.subdivTaskid != nil{

@@ -32,7 +32,7 @@ class TaskSubdiviStep2ViewController: UIViewController, UITableViewDataSource, U
         subdivTableView2.dataSource = self
         subdivTableView2.delegate = self
         
-                print(self.number)
+        print(self.number)
     }
 
     override func viewWillAppear(_ animated: Bool) {

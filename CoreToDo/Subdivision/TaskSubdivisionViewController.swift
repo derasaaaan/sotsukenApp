@@ -22,6 +22,7 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     let taskCategories:[String] = ["First", "Second"]
     
     var totalCell = 0
+    var task: SubdivTask?
     
     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SubdivTask")
 
@@ -57,7 +58,11 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
         let toDetail = segue.destination as? TaskSubdiviStep2ViewController
 //        print(segue.identifier?.description ?? "aaaaa")
         if segue.identifier?.description == "toDetail" {
-            toDetail?.number = 100
+//            toDetail?.number = (task?.subdivTaskid)!
+            if let indexPath = subdivTableView.indexPathForSelectedRow{
+                let object = tasks[indexPath.row]
+                toDetail?.number = Int(object.subdivTaskid)
+            }
         }
 
         let toAdd = segue.destination as? SubdivAddTaskViewController
