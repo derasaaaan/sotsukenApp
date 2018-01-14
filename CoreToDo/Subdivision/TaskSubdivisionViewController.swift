@@ -21,8 +21,10 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     var tasksToShow:[String:[String]] = ["First":[], "Second":[]]
     let taskCategories:[String] = ["First", "Second"]
     
-    var onegai = 1
+    var totalCell = 0
     
+    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SubdivTask")
+
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -31,6 +33,7 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
         
         subdivTableView.dataSource = self
         subdivTableView.delegate = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,27 +42,30 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
         
         // taskTableViewを再読み込みする
         subdivTableView.reloadData()
+        
+        totalCell = tasks.count
+        print(totalCell)
     }
 
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        print(segue.identifier!)
-        
+//        print(segue.identifier!)
 
 //        以下二つのletはguardを外しました
         let toDetail = segue.destination as? TaskSubdiviStep2ViewController
 //        print(segue.identifier?.description ?? "aaaaa")
         if segue.identifier?.description == "toDetail" {
-            print("abc")
             toDetail?.number = 100
         }
 
         let toAdd = segue.destination as? SubdivAddTaskViewController
         if segue.identifier?.description == "toAdd" {
-            print("addButtonTapped")
-            toAdd?.taskId = 200
+        //            print("addButtonTapped")
+//        onegai =
+        //            print(onegai)
+        toAdd?.taskId = 200
         }
         
         guard let destinationViewController = segue.destination as? SubdivAddTaskViewController else { return }
