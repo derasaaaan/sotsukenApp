@@ -22,6 +22,7 @@ class TaskSubdiviStep2ViewController: UIViewController, UITableViewDataSource, U
     let taskCategories:[String] = ["First", "Second"]
     
     var number = 0
+    var totalCell = 0
     
     // MARK: - View Life Cycle
     
@@ -41,15 +42,23 @@ class TaskSubdiviStep2ViewController: UIViewController, UITableViewDataSource, U
         
         // taskTableViewを再読み込みする
         subdivTableView2.reloadData()
+        
+        totalCell = tasks.count
     }
     
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        if let indexPath = subdivTableView2.indexPathForSelectedRow {
+            let object = tasks[indexPath.row]
+            print(object)
+        }
+        
         let toAddSecond = segue.destination as? SubdivAddTask2ViewController
         if segue.identifier?.description == "toAddSecond" {
             toAddSecond?.number2 = self.number
+            toAddSecond?.taskIdSecond = totalCell
         }
         
         

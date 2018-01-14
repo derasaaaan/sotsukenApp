@@ -22,7 +22,7 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     let taskCategories:[String] = ["First", "Second"]
     
     var totalCell = 0
-    var task: SubdivTask?
+//    var task: SubdivTask?
     
     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SubdivTask")
 

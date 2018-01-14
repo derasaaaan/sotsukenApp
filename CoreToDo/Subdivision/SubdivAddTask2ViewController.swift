@@ -17,8 +17,8 @@ class SubdivAddTask2ViewController: UIViewController,UITextFieldDelegate {
     var task: DetailTask?
 
     var taskCategory = "First"
-    
     var number2 = 0
+    var  taskIdSecond = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +37,19 @@ class SubdivAddTask2ViewController: UIViewController,UITextFieldDelegate {
                 detailCategorySegmentedControl.selectedSegmentIndex = 0
             }
         }
+        //セルの数から適当にかぶらない数字を割り当て
+        let cellNum = Int16(taskIdSecond) + 1
+        
+        if task?.subdivTaskid != nil{
+            for var i in cellNum...(task?.subdivTaskid)!{
+                i += 1
+            }
+            taskIdSecond = Int(cellNum) + 1
+        } else if task?.subdivTaskid == nil{
+            taskIdSecond = Int(cellNum)
+        }
+        print("secondのcellナンバー",taskIdSecond)
+        
         print(self.number2)
     }
 
@@ -44,6 +57,7 @@ class SubdivAddTask2ViewController: UIViewController,UITextFieldDelegate {
 
     
     @IBAction func detailSaveButtonTapped(_ sender: UIBarButtonItem) {
+        
         let taskName = detailTextField.text
         if taskName == ""{
             navigationController?.popViewController(animated: true)
@@ -59,6 +73,8 @@ class SubdivAddTask2ViewController: UIViewController,UITextFieldDelegate {
         if let task = task {
             task.name = taskName
             task.category = taskCategory
+            task.subdivTaskid = Int16(number2)
+            task.detailTaskid = Int16(taskIdSecond)
         }
         
         // 変更内容を保存する

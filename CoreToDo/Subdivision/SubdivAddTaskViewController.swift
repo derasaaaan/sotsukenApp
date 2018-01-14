@@ -16,8 +16,6 @@ class SubdivAddTaskViewController: UIViewController,UITextFieldDelegate {
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var task: SubdivTask?
     
-    // MARK: -
-    
     var taskCategory = "First"
     var taskId = 0
     
