@@ -324,7 +324,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V7a-FA-2E4" id="HSi-5f-MSN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbI-Qm-bAC" userLabel="SubdivLabel2">
@@ -345,6 +345,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="subdivLabel2" destination="jbI-Qm-bAC" id="ptU-LY-CZG"/>
+                                            <segue destination="uUX-6e-kuX" kind="show" identifier="toMoreDetail" id="yRz-m0-JX9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -434,7 +435,7 @@
             </objects>
             <point key="canvasLocation" x="1756" y="2468"/>
         </scene>
-        <!--SubdivStep3-->
+        <!--タスク詳細その2-->
         <scene sceneID="DEh-et-s27">
             <objects>
                 <viewController id="uUX-6e-kuX" customClass="TaskSubdiviStep3ViewController" customModule="CoreToDo" customModuleProvider="target" sceneMemberID="viewController">
@@ -443,30 +444,47 @@
                         <viewControllerLayoutGuide type="bottom" id="uTY-DR-DKE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FMn-OM-lY5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S8J-ey-gnO">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S8J-ey-gnO" userLabel="SubdivTableView3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Step3Cell" id="wIw-nc-rhe">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wIw-nc-rhe" id="dkz-HV-kij">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MiE-jk-H1r" userLabel="SubdivLabel3">
+                                                    <rect key="frame" x="18" y="16" width="349" height="25"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MiE-jk-H1r" firstAttribute="leading" secondItem="dkz-HV-kij" secondAttribute="leadingMargin" constant="10" id="NwV-g9-wgd"/>
+                                                <constraint firstItem="MiE-jk-H1r" firstAttribute="trailing" secondItem="dkz-HV-kij" secondAttribute="trailingMargin" id="Oho-VC-5jp"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="MiE-jk-H1r" secondAttribute="bottom" constant="-5.5" id="djc-SF-UVh"/>
+                                                <constraint firstItem="MiE-jk-H1r" firstAttribute="top" secondItem="dkz-HV-kij" secondAttribute="topMargin" constant="8" id="xBs-wG-Hye"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyU-YQ-baR">
-                                <rect key="frame" x="305" y="597" width="50" height="50"/>
+                                <rect key="frame" x="305" y="533" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="iHK-af-jdu"/>
                                     <constraint firstAttribute="height" constant="50" id="lst-nQ-LPp"/>
                                 </constraints>
                                 <color key="tintColor" red="0.76078431369999999" green="0.15686274510000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="PUX-yy-zUT" kind="show" id="GPk-hW-b1M"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -479,13 +497,66 @@
                             <constraint firstItem="uTY-DR-DKE" firstAttribute="top" secondItem="S8J-ey-gnO" secondAttribute="bottom" id="zL8-s6-88z"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="SubdivStep3" id="jm0-RQ-6vg">
+                    <navigationItem key="navigationItem" title="タスク詳細その2" id="jm0-RQ-6vg">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="edit" id="TlO-8w-dwo"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="subdivTableView3" destination="S8J-ey-gnO" id="mj5-Dw-Xvw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sl5-uS-oLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="897" y="3265"/>
+            <point key="canvasLocation" x="896.79999999999995" y="3264.9175412293857"/>
+        </scene>
+        <!--Subdiv Add Task3 View Controller-->
+        <scene sceneID="fAO-aF-lLS">
+            <objects>
+                <viewController id="PUX-yy-zUT" customClass="SubdivAddTask3ViewController" customModule="CoreToDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bsw-Op-HoB"/>
+                        <viewControllerLayoutGuide type="bottom" id="rfW-Ix-YU2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hxP-nk-veI">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JXI-8y-xFn" userLabel="Detail2TextField">
+                                <rect key="frame" x="16" y="46" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="Z9K-pa-2Xg"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="h0W-aN-ApC"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TItle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wn4-A9-pX4">
+                                <rect key="frame" x="16" y="20" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JXI-8y-xFn" firstAttribute="leading" secondItem="wn4-A9-pX4" secondAttribute="leading" id="NHr-gZ-TuA"/>
+                            <constraint firstItem="wn4-A9-pX4" firstAttribute="leading" secondItem="hxP-nk-veI" secondAttribute="leadingMargin" id="x3F-Qv-lvT"/>
+                            <constraint firstItem="JXI-8y-xFn" firstAttribute="top" secondItem="wn4-A9-pX4" secondAttribute="bottom" constant="5" id="yK4-fV-cgG"/>
+                            <constraint firstItem="wn4-A9-pX4" firstAttribute="top" secondItem="hxP-nk-veI" secondAttribute="top" constant="20" symbolic="YES" id="zxM-1d-ITj"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="kXg-DQ-DUu">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="Gy8-ZU-3vF"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="detail2Textfield" destination="JXI-8y-xFn" id="8Na-Zk-ceT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="frA-pb-Z0z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1749.5999999999999" y="3268.5157421289359"/>
         </scene>
         <!--Add Task View Controller-->
         <scene sceneID="mrm-Kr-m4r">

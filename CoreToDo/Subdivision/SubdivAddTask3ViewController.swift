@@ -1,33 +1,23 @@
 //
-//  TaskSubdiviStep3ViewController.swift
+//  SubdivAddTask3ViewController.swift
 //  CoreToDo
 //
-//  Created by 小野寺 恵 on 2017/09/25.
-//  Copyright © 2017年 derasan. All rights reserved.
+//  Created by 小野寺 恵 on 2018/01/15.
+//  Copyright © 2018年 derasan. All rights reserved.
 //
 
 import UIKit
-import CoreData
 
-class TaskSubdiviStep3ViewController: UIViewController {
+class SubdivAddTask3ViewController: UIViewController {
+    
+    @IBOutlet weak var detail2Textfield: UITextField!
+    
 
-    @IBOutlet weak var subdivTableView3: UITableView!
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-    // taskCategories[]に格納されている文字列がTableViewのセクションになる
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

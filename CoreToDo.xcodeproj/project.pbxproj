@@ -25,6 +25,7 @@
 		4ED218D71F78C8B600F0E719 /* TaskSubdivisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED218D61F78C8B600F0E719 /* TaskSubdivisionViewController.swift */; };
 		4ED218DB1F78DF8400F0E719 /* TaskSubdiviStep2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED218DA1F78DF8400F0E719 /* TaskSubdiviStep2ViewController.swift */; };
 		4ED218DD1F78F75900F0E719 /* TaskSubdiviStep3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED218DC1F78F75900F0E719 /* TaskSubdiviStep3ViewController.swift */; };
+		4EF48ED8200C48DB00A640E9 /* SubdivAddTask3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF48ED7200C48DB00A640E9 /* SubdivAddTask3ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		4ED218D61F78C8B600F0E719 /* TaskSubdivisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSubdivisionViewController.swift; sourceTree = "<group>"; };
 		4ED218DA1F78DF8400F0E719 /* TaskSubdiviStep2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSubdiviStep2ViewController.swift; sourceTree = "<group>"; };
 		4ED218DC1F78F75900F0E719 /* TaskSubdiviStep3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSubdiviStep3ViewController.swift; sourceTree = "<group>"; };
+		4EF48ED7200C48DB00A640E9 /* SubdivAddTask3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubdivAddTask3ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				4E0F7C6D1FB17CE90043F6CA /* SubdivTableViewCell2.swift */,
 				4EB1CAE51F88953D0044213C /* SubdivAddTaskViewController.swift */,
 				4E14487B1FB142E000D6E1BB /* SubdivAddTask2ViewController.swift */,
+				4EF48ED7200C48DB00A640E9 /* SubdivAddTask3ViewController.swift */,
 				4ED218DA1F78DF8400F0E719 /* TaskSubdiviStep2ViewController.swift */,
 				4ED218DC1F78F75900F0E719 /* TaskSubdiviStep3ViewController.swift */,
 			);
@@ -310,6 +313,7 @@
 			files = (
 				4ED218DD1F78F75900F0E719 /* TaskSubdiviStep3ViewController.swift in Sources */,
 				4E0F7C6E1FB17CE90043F6CA /* SubdivTableViewCell2.swift in Sources */,
+				4EF48ED8200C48DB00A640E9 /* SubdivAddTask3ViewController.swift in Sources */,
 				4E910EB51EFA6661004E4E9E /* ViewController.swift in Sources */,
 				4E910EE41EFA7C48004E4E9E /* AddTaskViewController.swift in Sources */,
 				4E45EF1B1EFF9608007B671B /* TaskTableViewCell.swift in Sources */,
