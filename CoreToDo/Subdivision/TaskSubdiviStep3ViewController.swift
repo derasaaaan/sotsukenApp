@@ -20,6 +20,8 @@ class TaskSubdiviStep3ViewController: UIViewController, UITableViewDataSource, U
     let taskCategories:[String] = ["First", "Second"]
     
     var number = 0
+    var taskIdFirst = 0
+    var taskIdSecond = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,7 @@ class TaskSubdiviStep3ViewController: UIViewController, UITableViewDataSource, U
         //ここにaddControllerに渡す値をかく
         let toAddThird = segue.destination as? SubdivAddTask3ViewController
         if segue.identifier?.description == "toAddThird" {
+            toAddThird?.taskIdFirst = self.taskIdFirst
             toAddThird?.taskIdSecond = self.number
         }
         
@@ -71,7 +74,6 @@ class TaskSubdiviStep3ViewController: UIViewController, UITableViewDataSource, U
             }
         }
     }
-
     
     // MARK: - Method of Getting data from Core Data
     
@@ -81,7 +83,7 @@ class TaskSubdiviStep3ViewController: UIViewController, UITableViewDataSource, U
         do {
             // CoreDataからデータをfetchしてtasksに格納
             let fetchRequest: NSFetchRequest<Detail2Task> = Detail2Task.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "detailTaskid == %@", NSNumber(value: number))
+            fetchRequest.predicate = NSPredicate(format: "detailTaskid == %@ AND subdivTaskid == %@", NSNumber(value: number) , NSNumber(value: taskIdFirst))
             tasks = try context.fetch(fetchRequest)
             
             // tasksToShow配列を空にする（同じデータを複数表示しないため）

@@ -17,6 +17,7 @@ class SubdivAddTask3ViewController: UIViewController {
     var task: Detail2Task?
     
     var taskCategory = "First"
+    var taskIdFirst = 0
     var taskIdSecond = 0
 
 
@@ -57,7 +58,7 @@ class SubdivAddTask3ViewController: UIViewController {
         if let task = task {
             task.name = taskName
             task.category = taskCategory
-//            task.subdivTaskid = Int16(taskIdFirst)
+            task.subdivTaskid = Int16(taskIdFirst)
             task.detailTaskid = Int16(taskIdSecond)
         }
         

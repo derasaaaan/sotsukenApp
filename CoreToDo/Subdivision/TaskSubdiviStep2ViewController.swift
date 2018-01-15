@@ -44,6 +44,7 @@ class TaskSubdiviStep2ViewController: UIViewController, UITableViewDataSource, U
         subdivTableView2.reloadData()
         
         totalCell = tasks.count
+        print("totalCell is",totalCell)
     }
     
     // MARK: Navigation
@@ -57,6 +58,8 @@ class TaskSubdiviStep2ViewController: UIViewController, UITableViewDataSource, U
                 print("SecondView",object)
                 toMoreDetail?.number = Int(object.detailTaskid)
             }
+            toMoreDetail?.taskIdFirst = self.number
+//            toMoreDetail?.taskIdSecond = totalCell  //numberに入ってる
         }
         
         let toAddSecond = segue.destination as? SubdivAddTask2ViewController
