@@ -324,7 +324,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V7a-FA-2E4" id="HSi-5f-MSN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbI-Qm-bAC" userLabel="SubdivLabel2">
@@ -451,25 +451,27 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Step3Cell" id="wIw-nc-rhe">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailPartTaskCell" id="wIw-nc-rhe" customClass="SubdivTableViewCell1" customModule="CoreToDo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wIw-nc-rhe" id="dkz-HV-kij">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MiE-jk-H1r" userLabel="SubdivLabel3">
                                                     <rect key="frame" x="18" y="16" width="349" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="1qC-od-OKl"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="MiE-jk-H1r" firstAttribute="leading" secondItem="dkz-HV-kij" secondAttribute="leadingMargin" constant="10" id="NwV-g9-wgd"/>
-                                                <constraint firstItem="MiE-jk-H1r" firstAttribute="trailing" secondItem="dkz-HV-kij" secondAttribute="trailingMargin" id="Oho-VC-5jp"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="MiE-jk-H1r" secondAttribute="bottom" constant="-5.5" id="djc-SF-UVh"/>
-                                                <constraint firstItem="MiE-jk-H1r" firstAttribute="top" secondItem="dkz-HV-kij" secondAttribute="topMargin" constant="8" id="xBs-wG-Hye"/>
+                                                <constraint firstItem="MiE-jk-H1r" firstAttribute="top" secondItem="dkz-HV-kij" secondAttribute="topMargin" constant="8" id="ZJo-D3-F4a"/>
+                                                <constraint firstItem="MiE-jk-H1r" firstAttribute="leading" secondItem="dkz-HV-kij" secondAttribute="leadingMargin" constant="10" id="hws-DG-gbB"/>
+                                                <constraint firstItem="MiE-jk-H1r" firstAttribute="trailing" secondItem="dkz-HV-kij" secondAttribute="trailingMargin" id="kv9-aY-b3f"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -483,7 +485,7 @@
                                 </constraints>
                                 <color key="tintColor" red="0.76078431369999999" green="0.15686274510000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="PUX-yy-zUT" kind="show" id="GPk-hW-b1M"/>
+                                    <segue destination="PUX-yy-zUT" kind="show" identifier="toAddThird" id="GPk-hW-b1M"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -547,7 +549,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="kXg-DQ-DUu">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="Gy8-ZU-3vF"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="Gy8-ZU-3vF">
+                            <connections>
+                                <action selector="detailPartSaveButtonTapped:" destination="PUX-yy-zUT" id="lrp-08-Tpo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

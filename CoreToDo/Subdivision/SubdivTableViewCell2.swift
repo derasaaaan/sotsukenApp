@@ -12,7 +12,7 @@ class SubdivTableViewCell2: UITableViewCell {
     
     // MARK: - Properties
     
-    static let reuseItentifier = "DetailTaskCell"
+    static let reuseIdentifier = "DetailTaskCell"
     
     // MARK: -
     

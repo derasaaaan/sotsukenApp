@@ -1,25 +1,21 @@
 //
-//  SubdivTableViewCell1.swift
+//  SubdivTableViewCell3.swift
 //  CoreToDo
 //
-//  Created by 小野寺 恵 on 2017/10/06.
-//  Copyright © 2017年 derasan. All rights reserved.
+//  Created by 小野寺 恵 on 2018/01/15.
+//  Copyright © 2018年 derasan. All rights reserved.
 //
 
 import UIKit
 
-class SubdivTableViewCell1: UITableViewCell {
+class SubdivTableViewCell3: UITableViewCell {
 
     // MARK: - Properties
     
-    static let reuseIdentifier = "MainTaskCell"
-    
-    // MARK: -
-        
-    @IBOutlet weak var subdivLabel1: UILabel!
-    
-    // MARK: - Initialization
+    static let reuseIdentifier = "DetailPartTaskCell"
 
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

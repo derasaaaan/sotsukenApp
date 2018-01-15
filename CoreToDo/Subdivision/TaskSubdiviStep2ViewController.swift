@@ -50,10 +50,14 @@ class TaskSubdiviStep2ViewController: UIViewController, UITableViewDataSource, U
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-//        if let indexPath = subdivTableView2.indexPathForSelectedRow {
-//            let object = tasks[indexPath.row]
-//            print(object)
-//        }
+        let toMoreDetail = segue.destination as? TaskSubdiviStep3ViewController
+        if segue.identifier?.description == "toMoreDetail" {
+            if let indexPath = subdivTableView2.indexPathForSelectedRow {
+                let object = tasks[indexPath.row]
+                print(object)
+                toMoreDetail?.number = Int(object.detailTaskid)
+            }
+        }
         
         let toAddSecond = segue.destination as? SubdivAddTask2ViewController
         if segue.identifier?.description == "toAddSecond" {
@@ -132,7 +136,7 @@ class TaskSubdiviStep2ViewController: UIViewController, UITableViewDataSource, U
 //    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = subdivTableView2.dequeueReusableCell(withIdentifier: SubdivTableViewCell2.reuseItentifier, for: indexPath) as? SubdivTableViewCell2 else{
+        guard let cell = subdivTableView2.dequeueReusableCell(withIdentifier: SubdivTableViewCell2.reuseIdentifier, for: indexPath) as? SubdivTableViewCell2 else{
             fatalError("Unexpected Index Path")
         }
         

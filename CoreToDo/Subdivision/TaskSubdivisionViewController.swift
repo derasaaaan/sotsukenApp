@@ -22,7 +22,6 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     let taskCategories:[String] = ["First", "Second"]
     
     var totalCell = 0
-//    var task: SubdivTask?
     
     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SubdivTask")
 
@@ -135,7 +134,7 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = subdivTableView.dequeueReusableCell(withIdentifier: SubdivTableViewCell1.reuseItentifier, for: indexPath) as? SubdivTableViewCell1 else{
+        guard let cell = subdivTableView.dequeueReusableCell(withIdentifier: SubdivTableViewCell1.reuseIdentifier, for: indexPath) as? SubdivTableViewCell1 else{
             fatalError("Unexpected Index Path")
         }
         
