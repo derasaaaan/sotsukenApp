@@ -33,7 +33,7 @@ class TaskSubdiviStep2ViewController: UIViewController, UITableViewDataSource, U
         subdivTableView2.dataSource = self
         subdivTableView2.delegate = self
         
-        print(self.number)
+//        print(self.number)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -54,7 +54,7 @@ class TaskSubdiviStep2ViewController: UIViewController, UITableViewDataSource, U
         if segue.identifier?.description == "toMoreDetail" {
             if let indexPath = subdivTableView2.indexPathForSelectedRow {
                 let object = tasks[indexPath.row]
-                print(object)
+                print("SecondView",object)
                 toMoreDetail?.number = Int(object.detailTaskid)
             }
         }
@@ -129,11 +129,6 @@ class TaskSubdiviStep2ViewController: UIViewController, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasksToShow[taskCategories[section]]!.count
     }
-    
-//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-//        let object = tasks[indexPath.row]
-//        print(object)
-//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = subdivTableView2.dequeueReusableCell(withIdentifier: SubdivTableViewCell2.reuseIdentifier, for: indexPath) as? SubdivTableViewCell2 else{

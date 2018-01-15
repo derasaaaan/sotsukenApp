@@ -60,6 +60,7 @@ class TaskSubdivisionViewController: UIViewController, UITableViewDataSource, UI
 //            toDetail?.number = (task?.subdivTaskid)!
             if let indexPath = subdivTableView.indexPathForSelectedRow{
                 let object = tasks[indexPath.row]
+                print("Firstview",object)
                 toDetail?.number = Int(object.subdivTaskid)
             }
         }

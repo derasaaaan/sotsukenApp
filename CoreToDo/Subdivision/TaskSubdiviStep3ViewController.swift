@@ -81,7 +81,7 @@ class TaskSubdiviStep3ViewController: UIViewController, UITableViewDataSource, U
         do {
             // CoreDataからデータをfetchしてtasksに格納
             let fetchRequest: NSFetchRequest<Detail2Task> = Detail2Task.fetchRequest()
-//            fetchRequest.predicate = NSPredicate(format: "subdivTaskid == %@", NSNumber(value: number))
+            fetchRequest.predicate = NSPredicate(format: "detailTaskid == %@", NSNumber(value: number))
             tasks = try context.fetch(fetchRequest)
             
             // tasksToShow配列を空にする（同じデータを複数表示しないため）

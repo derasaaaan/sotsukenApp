@@ -13,9 +13,13 @@ class SubdivTableViewCell3: UITableViewCell {
     // MARK: - Properties
     
     static let reuseIdentifier = "DetailPartTaskCell"
+    
+    // MARK: -
 
-    
-    
+    @IBOutlet weak var subdivLabel3: UILabel!
+
+    // MARK: - Initialization
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
