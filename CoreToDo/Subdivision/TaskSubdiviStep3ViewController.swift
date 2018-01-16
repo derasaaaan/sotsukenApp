@@ -23,6 +23,9 @@ class TaskSubdiviStep3ViewController: UIViewController, UITableViewDataSource, U
     var taskIdFirst = 0
     var taskIdSecond = 0
     
+    // チェックマークのやつ
+    var checkDataArray = [false, false, false]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +33,9 @@ class TaskSubdiviStep3ViewController: UIViewController, UITableViewDataSource, U
         
         subdivTableView3.dataSource = self
         subdivTableView3.delegate = self
+        
+        //  チェックマークのやつ
+        subdivTableView3.allowsMultipleSelection = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -114,12 +120,22 @@ class TaskSubdiviStep3ViewController: UIViewController, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = subdivTableView3.dequeueReusableCell(withIdentifier: SubdivTableViewCell3.reuseIdentifier, for: indexPath) as? SubdivTableViewCell3 else{
             fatalError("Unexpected Index Path")
-        }
+            }
         
         let sectionData = tasksToShow[taskCategories[indexPath.section]]
         let cellData = sectionData?[indexPath.row]
         
         cell.textLabel?.text = "\(cellData!)"
+        
+        // セルにチェック状態を反映
+        if checkDataArray[indexPath.row] {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
+        
+        // セルが選択された時の背景色を消す
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         return cell
     }
@@ -151,6 +167,23 @@ class TaskSubdiviStep3ViewController: UIViewController, UITableViewDataSource, U
         }
         // taskTableViewを再読み込みする
         subdivTableView3.reloadData()
+    }
+    
+//    //  チェックマークのやつ
+//    func  tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let cell = tableView.cellForRow(at:indexPath)
+//        
+//        // チェックマークを入れる
+//        cell?.accessoryType = .checkmark
+//    }
+    
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+        
+        // チェック状態を反転してリロードする
+        checkDataArray[indexPath.row] = !checkDataArray[indexPath.row]
+        tableView.reloadData()
     }
 
 
